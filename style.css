@@ -65,3 +65,15 @@ label {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Standardmäßig verstecken wir die Debug-Buttons */
+.debug-btn {
+    display: none;
+}
+
+/* Zeigen Sie die Debug-Buttons auf Geräten mit einer Breite von mindestens 768px an (typische Breite für Tablets im Hochformat) */
+@media (min-width: 768px) {
+    .debug-btn {
+        display: inline-block;
+    }
+}
