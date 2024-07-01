@@ -3,31 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spieler Suche</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            margin: 20px;
-        }
-        .dropdown, .search-btn, .results {
-            margin: 10px 0;
-        }
-    </style>
+    <title>NBA Joker</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <label for="position">Position:</label>
-    <select id="position" class="dropdown">
-        <option value="PG">PG</option>
-        <option value="SG">SG</option>
-        <option value="SF">SF</option>
-        <option value="PF">PF</option>
-        <option value="C">C</option>
-    </select>
-
     <label for="team">Team:</label>
     <select id="team" class="dropdown">
         <option value="ATL">Atlanta Hawks</option>
@@ -61,10 +42,27 @@
         <option value="UTA">Utah Jazz</option>
         <option value="WAS">Washington Wizards</option>
     </select>
+	
+	<div style="margin-bottom: 20px;"></div>
+	
+	<label for="position">Position:</label>
+    <select id="position" class="dropdown">
+        <option value="PG">PG</option>
+        <option value="SG">SG</option>
+        <option value="SF">SF</option>
+        <option value="PF">PF</option>
+        <option value="C">C</option>
+    </select>
+	
+	<div style="margin-bottom: 20px;"></div>
 
     <button class="search-btn" onclick="searchPlayers()">Suche</button>
     <button class="search-btn" onclick="getAllPlayers()">Alle Spieler</button>
-    <button class="search-btn" onclick="showDuplicates()">Finde Duplikate</button>
+    <button class="debug-btn" onclick="showDuplicates()">Finde Duplikate</button>
+	<button class="debug-btn" onclick="checkForInvalidPositions()">invalid positions</button>
+	<button class="debug-btn" onclick="checkForInvalidTeams()">invalid teams</button>
+	
+	<div style="margin-bottom: 20px;"></div>
     
     <div id="results" class="results"></div>
 </div>

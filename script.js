@@ -4,7 +4,7 @@ function showResults(playersResult) {
 
     // Anzeige der Anzahl der Spieler
     const sizeDiv = document.createElement('div');
-    sizeDiv.textContent = `size: ${playersResult.length}`;
+    sizeDiv.textContent = `Anzahl:  ${playersResult.length}`;
     resultsDiv.appendChild(sizeDiv);
 
     // Trennlinie
@@ -60,11 +60,23 @@ function find(pos, team) {
     });
 }
 
-function showDuplicates(){
+// ---------------- debugging ----------------------
+
+/* function showDuplicates(){
     const results = findDuplicates();
     showResults(results);
+} */
+function showDuplicates(){
+    const results = findDuplicates();
+        if (results.length > 0) {
+        console.log('Es wurden doppelte Spielereinträge gefunden:');
+        results.forEach(entry => {
+            console.log(`Spieler: ${entry.vorname} ${entry.nachname}, Ungültige Position: ${entry.invalidPosition}`);
+        });
+    } else {
+        console.log('Alle Spielereinträge sind unique.');
+    }
 }
-
 function findDuplicates() {
     const allPlayers = getPlayers();
     const duplicates = [];
@@ -82,4 +94,72 @@ function findDuplicates() {
     });
 
     return duplicates;
+}
+
+function checkForInvalidPositions() {
+	const allPlayers = getPlayers();
+    const invalidEntries = findInvalidPositions(allPlayers);
+
+    if (invalidEntries.length > 0) {
+        console.log('Es wurden ungültige Positionseinträge gefunden:');
+        invalidEntries.forEach(entry => {
+            console.log(`Spieler: ${entry.vorname} ${entry.nachname}, Ungültige Position: ${entry.invalidPosition}`);
+        });
+    } else {
+        console.log('Alle Positionseinträge sind gültig.');
+    }
+}
+function findInvalidPositions(players) {
+	let acceptedPositions = ['PG', 'SG', 'SF', 'PF', 'C'];
+    let invalidEntries = [];
+	
+    players.forEach(player => {
+        player.positions.forEach(position => {
+            if (!acceptedPositions.includes(position)) {
+                invalidEntries.push({
+                    vorname: player.vorname,
+                    nachname: player.nachname,
+                    invalidPosition: position
+                });
+            }
+        });
+    });
+
+    return invalidEntries;
+}
+
+function checkForInvalidTeams() {
+    const allPlayers = getPlayers();
+    const invalidEntries = findInvalidTeams(allPlayers, Team);
+
+    if (invalidEntries.length > 0) {
+        console.log('Es wurden ungültige Teameinträge gefunden:');
+        invalidEntries.forEach(entry => {
+            console.log(`Spieler: ${entry.vorname} ${entry.nachname}, Ungültiges Team: ${entry.invalidTeam}`);
+        });
+    } else {
+        console.log('Alle Teameinträge sind gültig.');
+    }
+}
+
+function findInvalidTeams(players, validTeams) {
+    let invalidEntries = [];
+
+    players.forEach(player => {
+        player.teams.forEach(team => {
+            if (!isValidTeam(team, validTeams)) {
+                invalidEntries.push({
+                    vorname: player.vorname,
+                    nachname: player.nachname,
+                    invalidTeam: team ? team.n : 'undefined'
+                });
+            }
+        });
+    });
+
+    return invalidEntries;
+}
+
+function isValidTeam(team, validTeams) {
+    return team && team.n && Object.values(validTeams).some(validTeam => validTeam.n === team.n);
 }

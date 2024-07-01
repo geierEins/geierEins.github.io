@@ -58,6 +58,12 @@ const Team = {
     KEN: { n: 'KEN' },  // Kentucky Colonels (-)
     SDR: { n: 'SDR' },  // San Diego Rockets (V)
     SAA: { n: 'SAA' },  // San Antonio Spurs 75-76 (V)
+	INA: { n: 'INA' },  // Indiana Pacers (1971-72) (V)
+	VAN: { n: 'VAN' },  // Vancouver Grizzlies (V)
+	NOJ: { n: 'NOJ' },  // New Orleans Jazz
+	CAR: { n: 'CAR' },  // Carolina Cougars (-)
+	MMS: { n: 'MMS' },  // Memphis Sounds (-)
+	MNM: { n: 'MNM' },  // Minnesota Muskies (-)
     UTS: { n: 'UTS' },  // Utah Stars (-)
     VIR: { n: 'VIR' }   // Virginia Squires (-)
 };
@@ -69,18 +75,23 @@ const teamAliases = {
     DEN: ['DEN', 'DNA'],
     GSW: ['GSW', 'SFW', 'PHW'],
     HOU: ['HOU', 'SDR'],
+	IND: ['IND', 'INA'],
     LAC: ['LAC', 'SDC', 'BUF'],
     LAL: ['LAL', 'MNL'],
+	MEM: ['MEM', 'VAN'],
     NOP: ['NOP', 'NOH', 'NOK'],
     OKC: ['OKC', 'SEA'],
     PHI: ['PHI', 'SYR'],
     WAS: ['WAS', 'WSB', 'BAL', 'CAP'],
     SAC: ['SAC', 'CIN', 'KCO'],
+	MNM: ['MNM'],
+	MMS: ['MMS'], 
     SAS: ['SAS', 'DLC', 'SAA'],
+	UTA: ['UTA', 'NOJ'],
     
     // dead franchises
     WSA: ['WSA', 'VIR'],
-    SSL: ['SSL'],
+    SSL: ['SSL', 'CAR'],
     KEN: ['KEN'],
     UTS: ['UTS']    
 };
