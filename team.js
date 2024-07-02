@@ -60,7 +60,10 @@ const Team = {
     SAA: { n: 'SAA' },  // San Antonio Spurs 75-76 (V)
 	INA: { n: 'INA' },  // Indiana Pacers (1971-72) (V)
 	VAN: { n: 'VAN' },  // Vancouver Grizzlies (V)
-	NOJ: { n: 'NOJ' },  // New Orleans Jazz
+	NOJ: { n: 'NOJ' },  // New Orleans Jazz (V)
+    KCK: { n: 'KCK' },  // Kansas City Kings
+    MNP: { n: 'MNP' },  // Minnesota Pipers (-)
+    PTP: { n: 'PTP' },  // Pittsburgh Pipers (-)
 	CAR: { n: 'CAR' },  // Carolina Cougars (-)
 	MMS: { n: 'MMS' },  // Memphis Sounds (-)
 	MNM: { n: 'MNM' },  // Minnesota Muskies (-)
@@ -83,7 +86,7 @@ const teamAliases = {
     OKC: ['OKC', 'SEA'],
     PHI: ['PHI', 'SYR'],
     WAS: ['WAS', 'WSB', 'BAL', 'CAP'],
-    SAC: ['SAC', 'CIN', 'KCO'],
+    SAC: ['SAC', 'CIN', 'KCO', 'KCK'],
 	MNM: ['MNM'],
 	MMS: ['MMS'], 
     SAS: ['SAS', 'DLC', 'SAA'],
@@ -93,5 +96,6 @@ const teamAliases = {
     WSA: ['WSA', 'VIR'],
     SSL: ['SSL', 'CAR'],
     KEN: ['KEN'],
+    PTP: ['PTP', 'MNP'],
     UTS: ['UTS']    
 };

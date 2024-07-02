@@ -1,3 +1,5 @@
+window.onload = toggleDebugButtons;
+
 // ---------------- spieler ------------------------
 
 function showPlayerResults(playersResult) {
@@ -196,4 +198,15 @@ function findInvalidTeams(players, validTeams) {
 
 function isValidTeam(team, validTeams) {
     return team && team.n && Object.values(validTeams).some(validTeam => validTeam.n === team.n);
+}
+
+function isLocalhost() {
+    return window.location.hostname === "";
+}
+
+function toggleDebugButtons() {
+    const debugButtons = document.querySelectorAll('.debug-btn');
+    debugButtons.forEach(button => {
+            button.style.display = isLocalhost() ? 'inline-block' : 'none';
+    });
 }
