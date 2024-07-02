@@ -335,6 +335,18 @@ const players = [
 	{ vorname: 'Gilbert', nachname: 'Arenas', positions: ['PG'], teams: [Team.GSW, Team.WAS, Team.ORL] },
 	{ vorname: 'Antawn', nachname: 'Jamison', positions: ['PF', 'SF'], teams: [Team.GSW, Team.DAL, Team.WAS, Team.CLE, Team.LAL] },
 	{ vorname: 'Jeff', nachname: 'Malone', positions: ['SG'], teams: [Team.WSB, Team.UTA] },
+    // TODO: 
+    { vorname: 'Dave', nachname: 'Bing', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Jo Jo', nachname: 'White', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Calvin', nachname: 'Murphy', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Alvin', nachname: 'Robertson', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Eddie', nachname: 'Jones', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Gail', nachname: 'Goodrich', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Connie', nachname: 'Hawkins', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Vern', nachname: 'Mikkelsen', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Otis', nachname: 'Thorpe', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Harry', nachname: 'Gallatin', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
+    { vorname: 'Lauri', nachname: 'Markkanen', positions: ['xx'], teams: [Team.xxx, Team.xxx] },
 ];
 
 function getPlayers() {

@@ -1,5 +1,7 @@
-function showResults(playersResult) {
-    const resultsDiv = document.getElementById('results');
+// ---------------- spieler ------------------------
+
+function showPlayerResults(playersResult) {
+    const resultsDiv = document.getElementById('playerresults');
     resultsDiv.innerHTML = ''; // Clear previous results
 
     // Anzeige der Anzahl der Spieler
@@ -16,7 +18,7 @@ function showResults(playersResult) {
         const ul = document.createElement('ul');
         playersResult.forEach(player => {
             const li = document.createElement('li');
-            li.textContent = player.nachname + ", " + player.vorname;// + " [" + player.positions + "]";
+            li.textContent = player.nachname + ", " + player.vorname;
             ul.appendChild(li);
         });
         resultsDiv.appendChild(ul);
@@ -28,14 +30,14 @@ function showResults(playersResult) {
 function getAllPlayers() {
     const allPlayers = getPlayers();
     allPlayers.sort((a, b) => a.nachname.localeCompare(b.nachname));
-    showResults(allPlayers);
+    showPlayerResults(allPlayers);
 }
 
 function searchPlayers() {
     const pos = document.getElementById('position').value;
     const team = document.getElementById('team').value;
     const results = find(pos, team);
-    showResults(results);
+    showPlayerResults(results);
 }
 
 function find(pos, team) {
@@ -60,13 +62,45 @@ function find(pos, team) {
     });
 }
 
-// ---------------- debugging ----------------------
+// ---------------- stats ------------------------
 
-/* function showDuplicates(){
-    const results = findDuplicates();
-    showResults(results);
-} */
-function showDuplicates(){
+function showStatResults(statsResult) {
+    const resultsDiv = document.getElementById('statsresults');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    // Trennlinie
+    const hr = document.createElement('hr');
+    resultsDiv.appendChild(hr);
+
+    // Stats
+    const ul = document.createElement('ul');
+    statsResult.forEach(stat => {
+        const li = document.createElement('li');
+        li.textContent = stat.text;
+        ul.appendChild(li);
+    });
+    resultsDiv.appendChild(ul);
+
+}
+
+function getRandomStats(count){
+    showStatResults(getRandomStatsArray(count));
+}
+
+function getRandomStatsArray(count) {
+    const stats = getStats();
+    const pickedNums = new Set();
+
+    while (pickedNums.size < count) {
+        const randomIndex = Math.floor(Math.random() * stats.length);
+        pickedNums.add(stats[randomIndex]);
+    }
+    return Array.from(pickedNums);
+}
+
+
+// ---------------- debugging ----------------------
+function logDuplicates(){
     const results = findDuplicates();
         if (results.length > 0) {
         console.log('Es wurden doppelte Spielereinträge gefunden:');
@@ -96,7 +130,7 @@ function findDuplicates() {
     return duplicates;
 }
 
-function checkForInvalidPositions() {
+function logInvalidPositions() {
 	const allPlayers = getPlayers();
     const invalidEntries = findInvalidPositions(allPlayers);
 
@@ -128,7 +162,7 @@ function findInvalidPositions(players) {
     return invalidEntries;
 }
 
-function checkForInvalidTeams() {
+function logInvalidTeams() {
     const allPlayers = getPlayers();
     const invalidEntries = findInvalidTeams(allPlayers, Team);
 
