@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #1c1c1c;
-    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
@@ -64,6 +63,42 @@ label {
     background-color: #3c3c3c;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    background-color: #2e2e2e; /* Dunkler Hintergrund */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.tab button {
+    background-color: #3c3c3c; /* Dunkle Hintergrundfarbe für Tabs */
+    color: #e0e0e0; /* Helle Schriftfarbe */
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: background-color 0.3s;
+}
+
+.tab button:hover {
+    background-color: #555; /* Farbe beim Hover */
+}
+
+.tab button.active {
+    background-color: #4caf50; /* Aktive Tab-Farbe */
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    background-color: #2e2e2e; /* Dunkler Hintergrund */
+    color: #e0e0e0; /* Helle Schriftfarbe */
+    border-radius: 0 0 10px 10px;
 }
 
 /* Standardmäßig verstecken wir die Debug-Buttons */
