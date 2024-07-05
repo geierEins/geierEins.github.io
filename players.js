@@ -369,8 +369,7 @@ const players = [
 	{ vorname: 'Joakim', nachname: 'Noah', positions: ['C'], teams: [Team.CHI, Team.NYK, Team.MEM] }, 
 	{ vorname: 'Stephon', nachname: 'Marbury', positions: ['PG'], teams: [Team.MIN, Team.NJN, Team.PHO, Team.NYK] }, 
 	{ vorname: 'Caron', nachname: 'Butler', positions: ['SF', 'SG'], teams: [Team.MIA, Team.LAL, Team.WAS, Team.LAC, Team.DET] }, 
-	{ vorname: 'Antoine', nachname: 'Walker', positions: ['PF'], teams: [Team.BOS, Team.DAL, Team.ATL, Team.MIA, Team.MIN] }, 
-	{ vorname: 'xxx', nachname: 'xxx', positions: ['xx'], teams: [Team.xxx] }, 
+	{ vorname: 'Antoine', nachname: 'Walker', positions: ['PF'], teams: [Team.BOS, Team.DAL, Team.ATL, Team.MIA, Team.MIN] }
 ];
 
 function getPlayers() {
