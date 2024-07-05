@@ -58,10 +58,11 @@ const Team = {
     KEN: { n: 'KEN' },  // Kentucky Colonels (-)
     SDR: { n: 'SDR' },  // San Diego Rockets (V)
     SAA: { n: 'SAA' },  // San Antonio Spurs 75-76 (V)
-	INA: { n: 'INA' },  // Indiana Pacers (1971-72) (V)
-	VAN: { n: 'VAN' },  // Vancouver Grizzlies (V)
-	NOJ: { n: 'NOJ' },  // New Orleans Jazz (V)
-    KCK: { n: 'KCK' },  // Kansas City Kings
+    INA: { n: 'INA' },  // Indiana Pacers (1971-72) (V)
+    VAN: { n: 'VAN' },  // Vancouver Grizzlies (V)
+    NOJ: { n: 'NOJ' },  // New Orleans Jazz (V)
+    KCK: { n: 'KCK' },  // Kansas City Kings (V)
+    STB: { n: 'STB' },  // St. Louis Bombers 
     MNP: { n: 'MNP' },  // Minnesota Pipers (-)
     PTP: { n: 'PTP' },  // Pittsburgh Pipers (-)
 	CAR: { n: 'CAR' },  // Carolina Cougars (-)
@@ -96,6 +97,7 @@ const teamAliases = {
     WSA: ['WSA', 'VIR'],
     SSL: ['SSL', 'CAR'],
     KEN: ['KEN'],
+    STB: ['STB'],
     PTP: ['PTP', 'MNP'],
     UTS: ['UTS']    
 };
