@@ -353,7 +353,7 @@ const players = [
 	{ vorname: 'Nick', nachname: 'Van Exel', positions: ['PG', 'SG'], teams: [Team.LAL, Team.DEN, Team.DAL, Team.POR, Team.SAS] }, 
 	{ vorname: 'Doc', nachname: 'Rivers', positions: ['PG'], teams: [Team.ATL, Team.NYK, Team.SAS] }, 
 	{ vorname: 'Theo', nachname: 'Ratliff', positions: ['C', 'PF'], teams: [Team.DET, Team.PHI, Team.ATL, Team.POR] }, 
-	{ vorname: 'Mehmet', nachname: 'Okur', positions: ['C', 'PF'], teams: [Team.DET], Team.UTA }, 
+	{ vorname: 'Mehmet', nachname: 'Okur', positions: ['C', 'PF'], teams: [Team.DET, Team.UTA] }, 
 	{ vorname: 'Antonio', nachname: 'McDyess', positions: ['PF', 'C'], teams: [Team.DEN, Team.PHO, Team.DET, Team.SAS] }, 
 	{ vorname: 'Tyrese', nachname: 'Maxey', positions: ['PG', 'SG'], teams: [Team.PHI] },
 	{ vorname: 'Jamal', nachname: 'Magloire', positions: ['C'], teams: [Team.CHH, Team.NOH, Team.MIL, Team.POR, Team.MIA] }, 
