@@ -47,7 +47,8 @@ function find(pos, team) {
 
     return allPlayers.filter(player => {
         console.log('Checking player:', player);
-        const hasPosition = player.positions.includes(pos);
+
+        const hasPosition = pos === 'ALL' || player.positions.includes(pos);
 
         // Finde die zugehörigen Team-Aliase, falls vorhanden, ansonsten nutze das Team selbst
         const aliases = teamAliases[team] || [team];
@@ -63,6 +64,7 @@ function find(pos, team) {
         return hasPosition && hasValidTeam;
     });
 }
+
 
 // ---------------- stats ------------------------
 
