@@ -31,7 +31,13 @@ function showPlayerResults(playersResult) {
 
 function getAllPlayers() {
     const allPlayers = getPlayers();
-    allPlayers.sort((a, b) => a.nachname.localeCompare(b.nachname));
+    allPlayers.sort((a, b) => {
+        const lastNameComparison = a.nachname.localeCompare(b.nachname);
+        if (lastNameComparison !== 0) {
+            return lastNameComparison;
+        }
+        return a.vorname.localeCompare(b.vorname);
+    });
     showPlayerResults(allPlayers);
 }
 
@@ -69,29 +75,6 @@ function find(pos, team) {
 
     return randomizedPlayers;
 }
-
-// function find(pos, team) {
-//     const allPlayers = getPlayers();
-
-//     return allPlayers.filter(player => {
-//         console.log('Checking player:', player);
-
-//         const hasPosition = pos === 'ALL' || player.positions.includes(pos);
-
-//         // Finde die zugehörigen Team-Aliase, falls vorhanden, ansonsten nutze das Team selbst
-//         const aliases = teamAliases[team] || [team];
-
-//         const hasValidTeam = player.teams.some(t => {
-//             if (!t || !t.n) {
-//                 console.error('Invalid team entry:', t);
-//                 return false;
-//             }
-//             return aliases.includes(t.n);
-//         });
-
-//         return hasPosition && hasValidTeam;
-//     });
-// }
 
 // ---------------- stats ------------------------
 
