@@ -91,7 +91,7 @@ function showStatResults(statsResult) {
     statsResult.forEach((stat, index) => {
         const li = document.createElement('li');
         if (statsResult.length > 1) {
-            li.textContent = `${index + 1} - ${stat.text}`;
+            li.textContent = `${index + 1}   -   ${stat.text}`;
         } else {
             li.textContent = stat.text;
         }
