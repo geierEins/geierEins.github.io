@@ -45,7 +45,7 @@ function searchPlayers() {
 function find(pos, team) {
     const allPlayers = getPlayers();
 
-    return allPlayers.filter(player => {
+    const filteredPlayers = allPlayers.filter(player => {
         console.log('Checking player:', player);
 
         const hasPosition = pos === 'ALL' || player.positions.includes(pos);
@@ -63,8 +63,35 @@ function find(pos, team) {
 
         return hasPosition && hasValidTeam;
     });
+
+    // Randomize the order of filteredPlayers before returning
+    const randomizedPlayers = filteredPlayers.sort(() => Math.random() - 0.5);
+
+    return randomizedPlayers;
 }
 
+// function find(pos, team) {
+//     const allPlayers = getPlayers();
+
+//     return allPlayers.filter(player => {
+//         console.log('Checking player:', player);
+
+//         const hasPosition = pos === 'ALL' || player.positions.includes(pos);
+
+//         // Finde die zugehörigen Team-Aliase, falls vorhanden, ansonsten nutze das Team selbst
+//         const aliases = teamAliases[team] || [team];
+
+//         const hasValidTeam = player.teams.some(t => {
+//             if (!t || !t.n) {
+//                 console.error('Invalid team entry:', t);
+//                 return false;
+//             }
+//             return aliases.includes(t.n);
+//         });
+
+//         return hasPosition && hasValidTeam;
+//     });
+// }
 
 // ---------------- stats ------------------------
 
