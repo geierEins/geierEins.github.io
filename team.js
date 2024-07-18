@@ -62,7 +62,8 @@ const Team = {
     VAN: { n: 'VAN' },  // Vancouver Grizzlies (V)
     NOJ: { n: 'NOJ' },  // New Orleans Jazz (V)
     KCK: { n: 'KCK' },  // Kansas City Kings (V)
-    STB: { n: 'STB' },  // St. Louis Bombers 
+    BRK: { n: 'BRK' },  // Brooklyn Nets 2014-15 (V)
+    STB: { n: 'STB' },  // St. Louis Bombers (-)
     MNP: { n: 'MNP' },  // Minnesota Pipers (-)
     PTP: { n: 'PTP' },  // Pittsburgh Pipers (-)
 	CAR: { n: 'CAR' },  // Carolina Cougars (-)
@@ -74,7 +75,7 @@ const Team = {
 
 const teamAliases = {
     ATL: ['ATL', 'STL', 'MLH'],
-    BKN: ['BKN', 'NJN', 'NYA'],
+    BKN: ['BKN', 'NJN', 'NYA', 'BRK'],
     CHO: ['CHO', 'CHA', 'CHH'],
     DEN: ['DEN', 'DNA'],
     GSW: ['GSW', 'SFW', 'PHW'],

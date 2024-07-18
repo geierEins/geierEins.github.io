@@ -384,7 +384,41 @@ const players = [
 	{ vorname: 'Dillon', nachname: 'Brooks', positions: ['SF', 'SG'], teams: [Team.MEM, Team.HOU] },
 	{ vorname: 'Paolo', nachname: 'Banchero', positions: ['PF'], teams: [Team.ORL] },
     { vorname: 'Matt', nachname: 'Barnes', positions: ['SF', 'PF'], teams: [Team.SAC, Team.PHI, Team.GSW, Team.PHO, Team.ORL, Team.LAL, Team.LAC, Team.MEM] },
-    { vorname: 'Harrison', nachname: 'Barnes', positions: ['PF', 'SF'], teams: [Team.GSW, Team.DAL, Team.SAC] }
+    { vorname: 'Harrison', nachname: 'Barnes', positions: ['PF', 'SF'], teams: [Team.GSW, Team.DAL, Team.SAC] },
+    
+    // neu
+    { vorname: 'Ben', nachname: 'Gordon', positions: ['SG'], teams: [Team.CHI, Team.DET, Team.CHA, Team.ORL] },
+    { vorname: 'Kirk', nachname: 'Hinrich', positions: ['PG', 'SG'], teams: [Team.CHI, Team.WAS] },
+    { vorname: 'Kenneth', nachname: 'Faried', positions: ['PF', 'C'], teams: [Team.DEN] },
+    { vorname: 'Marcus', nachname: 'Camby', positions: ['C', 'PF'], teams: [Team.TOR, Team.NYK, Team.DEN, Team.LAC, Team.POR] },
+    { vorname: 'Boris', nachname: 'Diaw', positions: ['PF', 'SG'], teams: [Team.ATL, Team.PHO, Team.CHA, Team.SAS, Team.UTA] },
+    { vorname: 'Brad', nachname: 'Miller', positions: ['C', 'PF'], teams: [Team.CHH, Team.CHI, Team.IND, Team.SAC, Team.HOU] },
+    { vorname: 'Andre', nachname: 'Miller', positions: ['PG', 'SG'], teams: [Team.CLE, Team.LAC, Team.DEN, Team.PHI, Team.POR, Team.WAS] },
+    { vorname: 'Anthony', nachname: 'Edwards', positions: ['SG'], teams: [Team.MIN] },
+    { vorname: 'Austin', nachname: 'Reaves', positions: ['SG'], teams: [Team.LAL] },
+    { vorname: 'Chet', nachname: 'Holmgren', positions: ['C', 'PF'], teams: [Team.OKC] },
+    { vorname: 'Alex', nachname: 'Caruso', positions: ['PG', 'SG'], teams: [Team.LAL, Team.CHI] },
+    { vorname: 'Mason', nachname: 'Plumlee', positions: ['C'], teams: [Team.BRK, Team.POR, Team.DEN, Team.DET, Team.CHO, Team.LAC] },
+    { vorname: 'Joe', nachname: 'Harris', positions: ['SG', 'SF'], teams: [Team.CLE, Team.BRK] },
+    { vorname: 'Marcus', nachname: 'Smart', positions: ['PG', 'SG'], teams: [Team.BOS] },
+    { vorname: 'Chandler', nachname: 'Parsons', positions: ['SF', 'PF'], teams: [Team.HOU, Team.DAL] },
+    { vorname: 'Michael', nachname: 'Carter-Williams', positions: ['PG', 'SG'], teams: [Team.PHI, Team.MIL, Team.CHI, Team.CHO, Team.ORL] },
+    { vorname: 'Lamar', nachname: 'Odom', positions: ['PF', 'SF'], teams: [Team.LAC, Team.MIA, Team.LAL] },
+    { vorname: 'Tayshaun', nachname: 'Prince', positions: ['SF'], teams: [Team.DET, Team.MEM, Team.MIN] },
+    { vorname: 'Michael', nachname: 'Redd', positions: ['SG', 'SF'], teams: [Team.MIL, Team.PHO] },
+    { vorname: 'Vin', nachname: 'Baker', positions: ['PF', 'C'], teams: [Team.MIL, Team.SEA, Team.BOS] },
+    { vorname: 'Steve', nachname: 'Smith', positions: ['SG'], teams: [Team.MIA, Team.ATL, Team.POR, Team.SAS, Team.NOH] },
+    { vorname: 'Antonio', nachname: 'McDyess', positions: ['PF', 'C'], teams: [Team.DEN, Team.PHO, Team.DET, Team.SAS] },
+    { vorname: 'Stromile', nachname: 'Swift', positions: ['PF', 'C'], teams: [Team.VAN, Team.MEM, Team.HOU] },
+    { vorname: 'Darius', nachname: 'Miles', positions: ['SF'], teams: [Team.LAC, Team.CLE, Team.POR] },
+    { vorname: 'Jason', nachname: 'Richardson', positions: ['SG', 'SF'], teams: [Team.GSW, Team.CHA, Team.PHO, Team.ORL] },
+    { vorname: 'Quentin', nachname: 'Richardson', positions: ['SF', 'SG'], teams: [Team.LAC, Team.PHO, Team.NYK, Team.ORL] },
+    { vorname: 'Mike', nachname: 'Miller', positions: ['S', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] },
+    { vorname: 'xxx', nachname: 'xxx', positions: ['xxx', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] },
+    { vorname: 'xxx', nachname: 'xxx', positions: ['xxx', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] },
+    { vorname: 'xxx', nachname: 'xxx', positions: ['xxx', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] },
+    { vorname: 'xxx', nachname: 'xxx', positions: ['xxx', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] },
+    { vorname: 'xxx', nachname: 'xxx', positions: ['xxx', 'xxx'], teams: [Team.xxx, Team.xxx, Team.xxx] }
 ];
 
 function getPlayers() {

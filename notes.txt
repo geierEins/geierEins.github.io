@@ -1,31 +1,31 @@
 // notes and ides for new players and stuff
 
-Ben Gordon
-Kirk Hinrich
-Kenneth Farried
-Marcus Camby
-Boris Diaw
-Brad Miller
-Andre Miller
-Anthony Edwards
-Austin Reaves
-Chet Holmgren
-Alex Caruso
-Mason Plumlee
-Joe Harris
-Marcus Smart
-Chandler Parsons
-Michael Carter-Williams
-Lamar Odom
-Tayshaun Prince
-Michael Redd
-Vin Baker
-Steve Smith
-Antonio McDyess
-Stromile Swift
-Darius Miles
-Jason Richardson
-Quentin Richardson
+Ben Gordon X
+Kirk Hinrich X
+Kenneth Farried X
+Marcus Camby X
+Boris Diaw X
+Brad Miller X
+Andre Miller X
+Anthony Edwards X
+Austin Reaves X
+Chet Holmgren X
+Alex Caruso X
+Mason Plumlee X
+Joe Harris X
+Marcus Smart X
+Chandler Parsons X
+Michael Carter-Williams X
+Lamar Odom X
+Tayshaun Prince X
+Michael Redd X
+Vin Baker X
+Steve Smith X
+Antonio McDyess X
+Stromile Swift X
+Darius Miles X
+Jason Richardson X
+Quentin Richardson X
 Mike Miller
 Brent Barry
 Damon Stoudamire
@@ -63,3 +63,24 @@ Ryan Anderson
 Eric Snow
 Jeff Green
 Gerald Green
+Evan Turner
+Darius Garland
+Jalen Brunson
+Cade Cunningham
+Danny Green
+Corey Brewer
+Lamelo Ball
+Jose Calderon
+Michael Beasley
+Daniel Theis
+Brandon Jennings
+Nikola Pekovic
+J.R. Smith
+Steve Kerr
+Bruce Bowen
+Mehmet Okur
+Luis Scola
+Monta Ellis
+Josh Howard
+Roy Hibbert
+David Lee
