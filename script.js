@@ -115,41 +115,6 @@ function getRandomStatsArray(count) {
     return Array.from(pickedNums);
 }
 
-// function showStatResults(statsResult) {
-//     const resultsDiv = document.getElementById('statsresults');
-//     resultsDiv.innerHTML = ''; // Clear previous results
-
-//     // Trennlinie
-//     const hr = document.createElement('hr');
-//     resultsDiv.appendChild(hr);
-
-//     // Stats
-//     const ul = document.createElement('ul');
-//     statsResult.forEach(stat => {
-//         const li = document.createElement('li');
-//         li.textContent = stat.text;
-//         ul.appendChild(li);
-//     });
-//     resultsDiv.appendChild(ul);
-
-// }
-
-// function getRandomStats(count){
-//     showStatResults(getRandomStatsArray(count));
-// }
-
-// function getRandomStatsArray(count) {
-//     const stats = getStats();
-//     const pickedNums = new Set();
-
-//     while (pickedNums.size < count) {
-//         const randomIndex = Math.floor(Math.random() * stats.length);
-//         pickedNums.add(stats[randomIndex]);
-//     }
-//     return Array.from(pickedNums);
-// }
-
-
 // ---------------- debugging ----------------------
 
 function debug(){
