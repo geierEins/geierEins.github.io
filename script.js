@@ -104,6 +104,13 @@ function getRandomStatsArray(count) {
 
 
 // ---------------- debugging ----------------------
+
+function debug(){
+    logDuplicates();
+    logInvalidPositions();
+    logInvalidTeams();
+}
+
 function logDuplicates(){
     const results = findDuplicates();
         if (results.length > 0) {
@@ -179,7 +186,6 @@ function logInvalidTeams() {
         console.log('Alle Teameinträge sind gültig.');
     }
 }
-
 function findInvalidTeams(players, validTeams) {
     let invalidEntries = [];
 
