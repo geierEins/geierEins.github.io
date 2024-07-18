@@ -101,6 +101,10 @@ label {
     border-radius: 0 0 10px 10px;
 }
 
+#statsresults ul {
+    list-style-type: none;
+}
+
 /* Standardmäßig verstecken wir die Debug-Buttons */
 .debug-btn {
     display: none;
