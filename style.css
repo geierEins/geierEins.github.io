@@ -3,11 +3,12 @@ body {
     background-color: #1c1c1c;
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
 }
 
 .container {
-    margin: 20px;
-    padding: 20px;
+    margin: 10px;
+    padding: 10px;
     background-color: #2e2e2e;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -144,12 +145,15 @@ label {
 
 /* Style for checkboxes */
 .dropdown-content label {
-    color: black;
     color: white;
     padding: 2px 8px;
     text-decoration: none;
     display: block;
     white-space: nowrap;
+}
+
+.dropdown-content label:hover{
+    color: #32a893;
 }
 
 .dropdown-content label input {
@@ -203,4 +207,35 @@ label {
 
 #statsresults ul li:nth-child(5) {
     background-color: #c793e8;
+}
+
+/* Styles for the rules content */
+.rules-content {
+    height: 100%;
+    overflow: visible;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    color: #e0e0e0; /* Schriftfarbe */
+}
+
+.rules-content h1 {
+    font-size: 24px; /* Überschrift */
+    margin-bottom: 10px;
+}
+
+.rules-content h2 {
+    font-size: 20px; /* Hauptkapitel */
+    margin-bottom: 8px;
+}
+
+.rules-content h3 {
+    font-size: 18px; /* Unterkapitel */
+    margin-bottom: 6px;
+}
+
+.rules-content h4 {
+    font-size: 16px; /* Text */
+    margin-bottom: 4px;
 }

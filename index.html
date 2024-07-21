@@ -11,10 +11,11 @@
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Spieler')" id="defaultOpen">Spielersuche</button>
     <button class="tablinks" onclick="openTab(event, 'Stats')">Statkarten</button>
+    <button class="tablinks" onclick="openTab(event, 'Regeln')">Spielregeln</button>
 </div>
 
     
-<!-- Spieler Tab -->
+<!-- Spielersuche Tab -->
 <div id="Spieler" class="tabcontent">
     <div class="container">
         <label for="team">Team:</label>
@@ -77,7 +78,7 @@
     </div>
 </div>
     
-<!-- Stats Tab -->
+<!-- Statkarten Tab -->
 <div id="Stats" class="tabcontent">
     <div class="container">
         <!-- Flex container for buttons -->
@@ -98,7 +99,13 @@
         <div id="statsresults" class="results"></div>
     </div>
 </div>
-    
+
+<!-- Regeln Tab -->
+<div id="Regeln" class="tabcontent">
+    <div class="container">
+        <div id="rulesContent" class="rules-content"></div>
+    </div>
+</div>    
 
 <script>
     function openTab(evt, tabName) {
@@ -123,6 +130,7 @@
 <script src="team.js"></script>
 <script src="players.js"></script>
 <script src="stats.js"></script>
+<script src="rules.js"></script>
 
 </body>
 </html>
