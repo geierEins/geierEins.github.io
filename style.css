@@ -29,7 +29,7 @@ label {
     color: #e0e0e0;
 }   
 
-.search-btn, .debug-btn {
+.search-btn, .debug-btn, .dropbtn {
     display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
@@ -37,6 +37,7 @@ label {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    height: 40px;
 }
 
 .search-btn {
@@ -99,6 +100,53 @@ label {
     background-color: #2e2e2e; /* Dunkler Hintergrund */
     color: #e0e0e0; /* Helle Schriftfarbe */
     border-radius: 0 0 10px 10px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 5px;
+}
+
+/* Dropdown Container */
+.dropdown-checkbox {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 350px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-checkbox:hover .dropdown-content {
+    display: block;
+}
+
+/* Style for checkboxes */
+.dropdown-content label {
+    color: black;
+    padding: 4px 12px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content label input {
+    margin-right: 10px;
 }
 
 #statsresults ul {

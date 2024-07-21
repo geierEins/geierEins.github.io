@@ -77,7 +77,8 @@
     </div>
 </div>
 
-<!-- Stats Tab -->
+<!--
+ Stats Tab 
 <div id="Stats" class="tabcontent">
     <div class="container">
         <button class="search-btn" onclick="getRandomStats(1)">1 Random Stat</button>
@@ -89,6 +90,30 @@
         
     </div>
 </div>
+-->
+    
+<!-- Stats Tab -->
+<div id="Stats" class="tabcontent">
+    <div class="container">
+        <!-- Flex container for buttons -->
+        <div class="button-container">
+            <!-- New Checkbox Dropdown -->
+            <div class="dropdown-checkbox">
+                <button class="dropbtn">Select Stats</button>
+                <div class="dropdown-content">
+                    <!-- Checkboxes will be dynamically populated here -->
+                </div>
+            </div>
+            <button class="search-btn" onclick="getRandomStats(1)">1 Random Stat</button>
+            <button class="search-btn" onclick="getRandomStats(5)">5 Random Stats</button>
+        </div>
+
+        <div style="margin-bottom: 20px;"></div>
+        
+        <div id="statsresults" class="results"></div>
+    </div>
+</div>
+    
 
 <script>
     function openTab(evt, tabName) {

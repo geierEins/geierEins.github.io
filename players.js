@@ -383,8 +383,6 @@ const players = [
 	{ vorname: 'Paolo', nachname: 'Banchero', positions: ['PF'], teams: [Team.ORL] },
     { vorname: 'Matt', nachname: 'Barnes', positions: ['SF', 'PF'], teams: [Team.SAC, Team.PHI, Team.GSW, Team.PHO, Team.ORL, Team.LAL, Team.LAC, Team.MEM] },
     { vorname: 'Harrison', nachname: 'Barnes', positions: ['PF', 'SF'], teams: [Team.GSW, Team.DAL, Team.SAC] },
-    
-    // neu
     { vorname: 'Ben', nachname: 'Gordon', positions: ['SG'], teams: [Team.CHI, Team.DET, Team.CHA, Team.ORL] },
     { vorname: 'Kirk', nachname: 'Hinrich', positions: ['PG', 'SG'], teams: [Team.CHI, Team.WAS] },
     { vorname: 'Kenneth', nachname: 'Faried', positions: ['PF', 'C'], teams: [Team.DEN] },

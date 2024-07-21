@@ -115,6 +115,44 @@ function getRandomStatsArray(count) {
     return Array.from(pickedNums);
 }
 
+// --------------- dropdown -------------------
+document.addEventListener('DOMContentLoaded', (event) => {
+    populateStatCheckboxes();
+});
+
+function populateStatCheckboxes() {
+    const stats = getStats();
+    const dropdownContent = document.querySelector('.dropdown-content');
+    stats.forEach(stat => {
+        const label = document.createElement('label');
+        label.innerHTML = `<input type="checkbox" checked value="${stat.i}"> ${stat.text}`;
+        dropdownContent.appendChild(label);
+    });
+}
+
+function getRandomStats(num) {
+    const checkedStats = Array.from(document.querySelectorAll('.dropdown-content input:checked'))
+                              .map(checkbox => parseInt(checkbox.value));
+    const availableStats = getStats().filter(stat => checkedStats.includes(stat.i));
+    const randomStats = [];
+    for (let i = 0; i < num; i++) {
+        const randomIndex = Math.floor(Math.random() * availableStats.length);
+        randomStats.push(availableStats[randomIndex]);
+        availableStats.splice(randomIndex, 1); // Remove the selected stat to avoid duplicates
+    }
+    displayStats(randomStats);
+}
+
+function displayStats(stats) {
+    const resultsDiv = document.getElementById('statsresults');
+    resultsDiv.innerHTML = '';
+    stats.forEach(stat => {
+        const p = document.createElement('p');
+        p.textContent = stat.text;
+        resultsDiv.appendChild(p);
+    });
+}
+
 // ---------------- debugging ----------------------
 
 function debug(){
