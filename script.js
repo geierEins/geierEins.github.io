@@ -93,11 +93,8 @@ function showStatResults(statsResult) {
     const ul = document.createElement('ul');
     statsResult.forEach((stat, index) => {
         const li = document.createElement('li');
-        if (statsResult.length > 1) {
-            li.textContent = `${index + 1}   -   ${stat.text}`;
-        } else {
-            li.textContent = stat.text;
-        }
+        li.textContent = `${index + 1}. ${stat.text}`; // Always include index
+        li.className = 'colored-stat'; // Apply class for styling
         ul.appendChild(li);
     });
     resultsDiv.appendChild(ul);
@@ -131,19 +128,6 @@ function populateStatCheckboxes() {
         label.innerHTML = `<input type="checkbox" checked value="${stat.i}"> ${stat.text}`;
         dropdownContent.appendChild(label);
     });
-}
-
-function getRandomStats(num) {
-    const checkedStats = Array.from(document.querySelectorAll('.dropdown-content input:checked'))
-                              .map(checkbox => parseInt(checkbox.value));
-    const availableStats = getStats().filter(stat => checkedStats.includes(stat.i));
-    const randomStats = [];
-    for (let i = 0; i < num; i++) {
-        const randomIndex = Math.floor(Math.random() * availableStats.length);
-        randomStats.push(availableStats[randomIndex]);
-        availableStats.splice(randomIndex, 1); // Remove the selected stat to avoid duplicates
-    }
-    displayStats(randomStats);
 }
 
 function displayStats(stats) {

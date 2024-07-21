@@ -171,3 +171,36 @@ label {
         display: inline-block;
     }
 }
+
+
+/* Styles for colored stats */
+.colored-stat {
+    color: #1c1c1c;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    list-style-type: none; /* Ensure there are no bullets */
+}
+
+/* Specific colors for stats */
+#statsresults ul li:nth-child(1) {
+    background-color: #ed6880;
+}
+
+#statsresults ul li:nth-child(2) {
+    background-color: #ffa07a;
+}
+
+#statsresults ul li:nth-child(3) {
+    background-color: #5dc4c2;
+}
+
+#statsresults ul li:nth-child(4) {
+    background-color: #99cc66;
+}
+
+#statsresults ul li:nth-child(5) {
+    background-color: #c793e8;
+}
