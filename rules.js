@@ -78,9 +78,15 @@ function loadRulesContent() {
 
         <p>NBA-Spieler mit den gleichen Positionen treten gegeneinander an. Die zugewiesene Statistik wird zufällig ermittelt.</p>
 
-        <p>Mit Ausnahme von Stat-Modus 3 werden die Stats von den Spielern verdeckt auf die NBA-Spieler gelegt. Erst wenn alle Spieler die Statkarten verteilt haben, geht es in die Stat-Phase.</p>
+        <p>Mit Ausnahme von Stat-Modus 3 werden die Stats von den Spielern verdeckt auf die NBA-Spieler gelegt. Erst wenn alle Spieler die Statkarten verteilt haben, geht es in die Auswertung.</p>
+
+        <p>Die Spieler einigen sich darauf, welche Stat-Karte zuerst aufgedeckt wird. Anschließend vergleichen die Spieler auf Basis der Daten auf basketball-reference.com die jeweiligen Statistiken ihrer NBA-Spieler. Der NBA Spieler mit dem besten Stat-Wert gewinnt, was dem Spieler einen Punkt verleiht.</p>
+
+        <p>In dieser Phase sind ingesamt 5 Punkte zu holen.</p>
 
         <p> - </p>
+
+        
 
 
 
