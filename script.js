@@ -1,14 +1,14 @@
 window.onload = toggleDebugButtons;
 
-// ---------------- spieler ------------------------
+// ---------------- spielersuche ------------------------
 
-function showPlayerResults(playersResult) {
+function showPlayerResults(playersResult, searchMode = false) {
     const resultsDiv = document.getElementById('playerresults');
     resultsDiv.innerHTML = ''; // Clear previous results
 
     // Anzeige der Anzahl der Spieler
     const sizeDiv = document.createElement('div');
-    sizeDiv.textContent = `Anzahl:  ${playersResult.length}`;
+    sizeDiv.textContent = `Anzahl: ${playersResult.length}`;
     resultsDiv.appendChild(sizeDiv);
 
     // Trennlinie
@@ -20,7 +20,10 @@ function showPlayerResults(playersResult) {
         const ul = document.createElement('ul');
         playersResult.forEach(player => {
             const li = document.createElement('li');
-            li.textContent = player.nachname + ", " + player.vorname;
+            // Formatierung abhängig vom Modus
+            li.textContent = searchMode
+                ? `${player.vorname} ${player.nachname}`
+                : `${player.nachname}, ${player.vorname}`;
             ul.appendChild(li);
         });
         resultsDiv.appendChild(ul);
@@ -45,7 +48,7 @@ function searchPlayers() {
     const pos = document.getElementById('position').value;
     const team = document.getElementById('team').value;
     const results = find(pos, team);
-    showPlayerResults(results);
+    showPlayerResults(results, true); // Set searchMode to true for search results
 }
 
 function find(pos, team) {
@@ -76,7 +79,7 @@ function find(pos, team) {
     return randomizedPlayers;
 }
 
-// ---------------- stats ------------------------
+// ---------------- statkarten ------------------------
 
 function showStatResults(statsResult) {
     const resultsDiv = document.getElementById('statsresults');

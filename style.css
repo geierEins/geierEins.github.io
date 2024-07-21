@@ -42,22 +42,20 @@ label {
 
 .search-btn {
     background-color: #4caf50;
-    color: #1c1c1c;
+    color: white;
 }
 
 .debug-btn {
     background-color: #ff9800;
-    color: #1c1c1c;
+    color: white;
 }
 
 .search-btn:hover {
     background-color: #57de5c;
-    color: #ffffff;
 }
 
 .debug-btn:hover {
     background-color: #ffaf38;
-    color: #ffffff;
 }
 
 .results {
@@ -92,7 +90,6 @@ label {
 }
 
 .tab button.active {
-    color: #1c1c1c;
     background-color: #4caf50;
 }
 
@@ -108,7 +105,7 @@ label {
 /* Dropdown Button */
 .dropbtn {
     background-color: #32a893;
-    color: #1c1c1c;
+    color: #ffffff;
     padding: 8px;
     border: none;
     cursor: pointer;
@@ -117,7 +114,7 @@ label {
 }
 
 .dropbtn:hover {
-    color: #e0e0e0;
+    background-color: #21c4a7;
 }
 
 /* Dropdown Container */
