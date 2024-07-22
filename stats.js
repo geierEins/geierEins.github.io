@@ -29,10 +29,12 @@ const stats = [
     {i: 19, text: "Assists pro Spiel (Karriereschnitt)"},
     {i: 20, text: "Free Throw Percentage (Karriereschnitt)"},
     {i: 21, text: "Field Goal Percentage (Karriereschnitt)"},
-    {i: 22, text: "3-Punkte Percentage (Karriereschnitt)"},   
+    {i: 22, text: "3-Punkte Percentage (Karriereschnitt)"},
+    {i: 23, text: "Player Efficiency Rating (Karriereschnitt)"},
+    {i: 24, text: "Win Shares (Karriereschnitt)"},
 
     // Rest
-    {i: 23, text: "Höchste Rückennummer"}
+    {i: 25, text: "Höchste Rückennummer"}
     
 ];
 
