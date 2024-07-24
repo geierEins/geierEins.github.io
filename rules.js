@@ -11,7 +11,7 @@ function loadRulesContent() {
 
         <h2>0  Einleitung</h2>
 
-        <p>Bei diesem Spiel geht es darum, eine möglichst starke Starting Five aus aktiven oder ehemaligen NBA Spielern zusammenzustellen. Basierend auf Teamkarten, die jeder Spieler zufällig bekommt, sollen alle vorhandenen Spielerpositionen passend besetzt werden. Anschließend treten alle Spieler in zwei Auswertungsphasen gegeneinander an, um zu bestimmen, welche Starting Five die Beste ist.</p>
+        <p>Bei diesem Spiel geht es darum, eine möglichst starke Starting Five aus aktiven oder ehemaligen NBA Spielern zusammenzustellen. Basierend auf Teamkarten, die jeder Spieler zufällig bekommt, sollen alle fünf Spielerpositionen (Point Guard, Shooting Guard, Small Forward, Power Forward und Center) passend besetzt werden. Anschließend treten alle Spieler in zwei Auswertungsphasen gegeneinander an, um zu bestimmen, welche Starting Five die Beste ist.</p>
 
         <p> - </p>
 
@@ -64,7 +64,7 @@ function loadRulesContent() {
         
         <p>Bei der Stat-Phase geht es darum, jedem NBA-Spieler in der eigenen Starting Five eine Statistik zuzuweisen, mit der der NBA-Spieler idealerweise die Nase vorn hat. </p>
         
-        <p>Die Statistiken werden je nach Stat-Modus zu einem unterschiedlichen Zeitraum ausgewählt. </p>
+        <p>Die Statistiken werden je nach Stat-Modus zu einem unterschiedlichen Zeitraum ausgewählt. Es gibt 3 Stat-Modi:</p>
         
         <h4>Stat-Modus 1:</h4>
 

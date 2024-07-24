@@ -221,21 +221,25 @@ label {
 }
 
 .rules-content h1 {
-    font-size: 24px; /* Überschrift */
+    color: #ed6880;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 .rules-content h2 {
+    color: #ffa07a;
     font-size: 20px; /* Hauptkapitel */
     margin-bottom: 8px;
 }
 
 .rules-content h3 {
+    color: #5dc4c2;
     font-size: 18px; /* Unterkapitel */
     margin-bottom: 6px;
 }
 
 .rules-content h4 {
+    color: #99cc66;
     font-size: 16px; /* Text */
     margin-bottom: 4px;
 }
