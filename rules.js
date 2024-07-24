@@ -80,13 +80,11 @@ function loadRulesContent() {
 
         <p>Mit Ausnahme von Stat-Modus 3 werden die Stats von den Spielern verdeckt auf die NBA-Spieler gelegt. Erst wenn alle Spieler die Statkarten verteilt haben, geht es in die Auswertung.</p>
 
-        <p>Die Spieler einigen sich darauf, welche Stat-Karte zuerst aufgedeckt wird. Anschließend vergleichen die Spieler auf Basis der Daten auf basketball-reference.com die jeweiligen Statistiken ihrer NBA-Spieler. Der NBA Spieler mit dem besten Stat-Wert gewinnt, was dem Spieler einen Punkt verleiht.</p>
+        <p>In der anschließenden Auswertung einigesn sich die Spieler darauf, welche Stat-Karte zuerst aufgedeckt wird. Nun vergleichen alle Spieler die Werte der jeweiligen Statistik ihrer NBA-Spieler auf Basis der Daten auf basketball-reference.com. Der NBA Spieler mit dem besten Stat-Wert gewinnt, was dem Spieler einen Punkt verleiht. Dann wird die nächste Statkarte aufgedeckt und die Stats werden wieder verglichen.</p>
 
         <p>In dieser Phase sind ingesamt 5 Punkte zu holen.</p>
 
         <p> - </p>
-
-        
 
 
 
@@ -96,7 +94,7 @@ function loadRulesContent() {
 
         <p>Bei insgesamt 3 Spielern vergibt jeder Spieler eine Stimme für das beste Team. Jede Stimme entspricht einem Punkt.</p>
 
-        <p>Bei insgesamt 4 Spielern vergibt jeder Spieler zwei Stimmen - eine für das Beste und eine für das zweitbeste Team. Die Stimme für das beste Team zählt zwei Punkte, wohingegen Stimmen für das zweitbeste Team einen Punkt zählen.</p>
+        <p>Bei insgesamt 4 Spielern vergibt jeder Spieler zwei Stimmen - eine für das Beste und eine für das zweitbeste Team. Die Stimme für das beste Team zählt zwei Punkte, wohingegen Stimmen für das zweitbeste Team jeweils einen Punkt zählen.</p>
 
         <p>Für welches Team bzw. welche Teams die Spieler voten, hängt ganz und gar von persönlichen Beweggründen der Spieler ab.</p>
 

@@ -31,7 +31,6 @@ label {
 }   
 
 .search-btn, .debug-btn, .dropbtn {
-    display: inline-block;
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
