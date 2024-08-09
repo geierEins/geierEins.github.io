@@ -14,6 +14,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.button-container {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons horizontal */
+    align-items: center; /* Zentriert die Buttons vertikal, falls nötig */
+    flex-wrap: wrap; /* Ermöglicht das Umbrechen der Buttons in die nächste Zeile */
+    gap: 5px; /* Optional: Abstand zwischen den Buttons */
+}
+
 label {
     font-weight: bold;
     display: block;
@@ -110,12 +118,12 @@ label {
 
 /* Dropdown Button */
 .dropbtn {
+    min-width: 270px;
     background-color: #32a893;
     color: #ffffff;
     padding: 8px;
     border: none;
     cursor: pointer;
-    width: 200px;
     border-radius: 5px;
 }
 
