@@ -100,15 +100,30 @@ function showStatResults(statsResult) {
     resultsDiv.appendChild(ul);
 }
 
-function getRandomStats(count) {
-    showStatResults(getRandomStatsArray(count));
+function getSelectedStats() {
+    const selectedStats = [];
+    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        const statIndex = parseInt(checkbox.value, 10);
+        selectedStats.push(getStats().find(stat => stat.i === statIndex));
+    });
+    console.log(selectedStats);
+    return selectedStats;
 }
 
-function getRandomStatsArray(count) {
-    const stats = getStats();
+function getRandomStats(count) {
+    const stats = getSelectedStats();
+    if (stats.length === 0) {
+        alert('Bitte wähle mindestens eine Stat aus.');
+        return;
+    }
+    showStatResults(getRandomStatsArray(count, stats));
+}
+
+function getRandomStatsArray(count, stats) {
     const pickedNums = new Set();
 
-    while (pickedNums.size < count) {
+    while (pickedNums.size < count && pickedNums.size < stats.length) {
         const randomIndex = Math.floor(Math.random() * stats.length);
         pickedNums.add(stats[randomIndex]);
     }
@@ -202,9 +217,6 @@ function searchTeamsByPlayer() {
         resultsDiv.textContent = 'Spieler nicht gefunden';
     }
 }
-
-
-
 
 // --------------- dropdown -------------------
 document.addEventListener('DOMContentLoaded', (event) => {

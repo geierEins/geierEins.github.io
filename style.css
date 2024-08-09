@@ -67,22 +67,27 @@ label {
 }
 
 .tab {
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap; /* Zeilenumbruch ermöglichen */
+    justify-content: space-between; /* Tabs gleichmäßig verteilen */
     border-bottom: 1px solid #ccc;
     background-color: #2e2e2e;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 0; /* Entfernt Standard-Padding */
+    margin: 0; /* Entfernt Standard-Margin */
 }
 
 .tab button {
+    flex: 1 1 auto; /* Tabs flexibel machen */
+    padding: 14px 16px;
     background-color: #3c3c3c;
     color: #e0e0e0;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
     transition: background-color 0.3s;
+    margin: 1px; /* Abstand zwischen den Tabs */
 }
 
 .tab button:hover {
@@ -93,6 +98,7 @@ label {
     background-color: #4caf50;
 }
 
+/* Style für die Tab-Inhalte */
 .tabcontent {
     display: none;
     padding: 6px 12px;
