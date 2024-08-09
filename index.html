@@ -8,17 +8,27 @@
 </head>
 <body>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    <!--
 <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Spieler')" id="defaultOpen">Spielersuche</button>
-    <button class="tablinks" onclick="openTab(event, 'Stats')">Statkarten</button>
+    <button class="tablinks" onclick="openTab(event, 'Spielersuche')">Spielersuche</button>
     <button class="tablinks" onclick="openTab(event, 'Teamsuche')">Teamsuche</button>
+    <button class="tablinks" onclick="openTab(event, 'Statkarten')">Statkarten</button>
     <button class="tablinks" onclick="openTab(event, 'BasketballReference')">Basketball Reference</button>
-    <button class="tablinks" onclick="openTab(event, 'Regeln')">Spielregeln</button>
+    <button class="tablinks" onclick="openTab(event, 'Spielregeln')">Spielregeln</button>
 </div>
+    -->
+    
+<div class="tab">
+    <button class="tablinks" id="tabSpielersuche" onclick="openTab(event, 'Spielersuche')">Spielersuche</button>
+    <button class="tablinks" id="tabTeamsuche" onclick="openTab(event, 'Teamsuche')">Teamsuche</button>
+    <button class="tablinks" id="tabStatkarten" onclick="openTab(event, 'Statkarten')">Statkarten</button>
+    <button class="tablinks" id="tabBballRef" onclick="openTab(event, 'BasketballReference')">Basketball Reference</button>
+    <button class="tablinks" id="tabSpielregeln" onclick="openTab(event, 'Spielregeln')">Spielregeln</button>
+</div>    
 
     
 <!-- Spielersuche Tab -->
-<div id="Spieler" class="tabcontent">
+<div id="Spielersuche" class="tabcontent">
     <div class="container">
         <label for="team">Team:</label>
         <select id="team" class="dropdown">
@@ -81,8 +91,21 @@
     </div>
 </div>
     
+<!-- Teamsuche Tab -->
+<div id="Teamsuche" class="tabcontent">
+    <div class="container">
+        <label for="playerName">Spielername:</label>
+        <input type="text" id="playerName" class="inputfield" oninput="suggestPlayers()" placeholder="Spieler eingeben..." autocomplete="off">
+        <div id="suggestions" class="suggestions"></div>
+        <div style="margin-bottom: 20px;"></div>
+        <button class="searchteam-btn" onclick="searchTeamsByPlayer()">Suche Teams</button>
+        <div style="margin-bottom: 20px;"></div>
+        <div id="teamresults" class="results"></div>
+    </div>
+</div>
+    
 <!-- Statkarten Tab -->
-<div id="Stats" class="tabcontent">
+<div id="Statkarten" class="tabcontent">
     <div class="container">
         <!-- Flex container for buttons -->
         <div class="button-container">
@@ -93,26 +116,13 @@
                     <!-- Checkboxes will be dynamically populated here -->
                 </div>
             </div>
-            <button class="search-btn" onclick="getRandomStats(1)">1 Random Stat</button>
-            <button class="search-btn" onclick="getRandomStats(5)">5 Random Stats</button>
+            <button class="randomstat-btn" onclick="getRandomStats(1)">1 Random Stat</button>
+            <button class="randomstat-btn" onclick="getRandomStats(5)">5 Random Stats</button>
         </div>
 
         <div style="margin-bottom: 20px;"></div>
         
         <div id="statsresults" class="results"></div>
-    </div>
-</div>
-    
-<!-- Teamsuche Tab -->
-<div id="Teamsuche" class="tabcontent">
-    <div class="container">
-        <label for="playerName">Spielername:</label>
-        <input type="text" id="playerName" class="inputfield" oninput="suggestPlayers()" placeholder="Spieler eingeben..." autocomplete="off">
-        <div id="suggestions" class="suggestions"></div>
-        <div style="margin-bottom: 20px;"></div>
-        <button class="search-btn" onclick="searchTeamsByPlayer()">Suche Teams</button>
-        <div style="margin-bottom: 20px;"></div>
-        <div id="teamresults" class="results"></div>
     </div>
 </div>
 
@@ -123,7 +133,7 @@
             <form id="basketballSearchForm" target="_blank" action="https://www.basketball-reference.com/search/search.fcgi">
                 <label for="playerSearch">Spielername:</label>
                 <input type="text" id="playerSearch" name="search" placeholder="Spieler eingeben..." required>
-                <button class="search-btn">in basketball-reference suchen</button>
+                <button class="searchbbref-btn">in basketball-reference suchen</button>
             </form>
             <div id="basketballSuggestions" class="suggestions"></div>
         </div>
@@ -131,8 +141,8 @@
 </div>
 
     
-<!-- Regeln Tab -->
-<div id="Regeln" class="tabcontent">
+<!-- Spielregeln Tab -->
+<div id="Spielregeln" class="tabcontent">
     <div class="container">
         <div id="rulesContent" class="rules-content"></div>
     </div>
@@ -155,7 +165,7 @@
     }
 
     // Set the default tab to open
-    document.getElementById("defaultOpen").click();
+    document.getElementById("tabSpielersuche").click();
 </script>
 
 <script src="stats.js"></script>

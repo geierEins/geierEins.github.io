@@ -14,6 +14,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.results {
+    display: none; /* Initial verstecken */
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .button-container {
     display: flex;
     justify-content: center; /* Zentriert die Buttons horizontal */
@@ -38,7 +47,7 @@ label {
     color: #e0e0e0;
 }   
 
-.search-btn, .debug-btn, .dropbtn {
+.search-btn, .searchteam-btn, .randomstat-btn, .searchbbref-btn, .debug-btn, .dropbtn {
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
@@ -48,22 +57,55 @@ label {
     height: 40px;
 }
 
+/* Dropdown Button für Stats */
+.dropbtn {
+    min-width: 270px;
+    background-color: #1E9C9C;
+    color: #ffffff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .search-btn {
     background-color: #4caf50;
     color: white;
 }
-
 .debug-btn {
     background-color: #ff9800;
+    color: white;
+}
+.searchteam-btn{
+    background-color: #25619C;
+    color: white;
+}
+.randomstat-btn{
+    background-color: #21c4a7;
+    color: white;
+}
+.searchbbref-btn{
+    background-color: #CC6600;
     color: white;
 }
 
 .search-btn:hover {
     background-color: #57de5c;
 }
-
 .debug-btn:hover {
     background-color: #ffaf38;
+}
+.searchteam-btn:hover {
+    background-color: #2370BD;
+}
+.randomstat-btn:hoover{
+    background-color: #2AD1B5;
+}
+.searchbbref-btn:hover {
+    background-color: #EB8826;
+}
+.dropbtn:hover {
+    background-color: #21B0B0;
 }
 
 .results {
@@ -85,7 +127,6 @@ label {
     padding: 0; /* Entfernt Standard-Padding */
     margin: 0; /* Entfernt Standard-Margin */
 }
-
 .tab button {
     flex: 1 1 auto; /* Tabs flexibel machen */
     padding: 14px 16px;
@@ -97,14 +138,33 @@ label {
     transition: background-color 0.3s;
     margin: 1px; /* Abstand zwischen den Tabs */
 }
-
 .tab button:hover {
     background-color: #555;
 }
 
+/*
 .tab button.active {
-    background-color: #4caf50;
+    background-color: #D29914;
 }
+*/
+
+/* Spezifische aktive Klassen */
+#tabSpielersuche.active {
+    background-color: #4caf50; /* Farbe für Spielersuche */
+}
+#tabTeamsuche.active {
+    background-color: #25619C; /* Farbe für Teamsuche */
+}
+#tabStatkarten.active {
+    background-color: #1E9C9C; /* Farbe für Statkarten */
+}
+#tabBballRef.active {
+    background-color: #C76E15; /* Farbe für Basketball Reference */
+}
+#tabSpielregeln.active {
+    background-color: #DE6176; /* Farbe für Spielregeln */
+}
+
 
 /* Style für die Tab-Inhalte */
 .tabcontent {
@@ -114,21 +174,6 @@ label {
     background-color: #2e2e2e;
     color: #e0e0e0;
     border-radius: 0 0 10px 10px;
-}
-
-/* Dropdown Button */
-.dropbtn {
-    min-width: 270px;
-    background-color: #32a893;
-    color: #ffffff;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.dropbtn:hover {
-    background-color: #21c4a7;
 }
 
 /* Dropdown Container */

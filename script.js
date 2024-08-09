@@ -4,6 +4,13 @@ window.onload = toggleDebugButtons;
 
 function showPlayerResults(playersResult, searchMode = false) {
     const resultsDiv = document.getElementById('playerresults');
+    
+    if (!playersResult || playersResult.length === 0) {
+        resultsDiv.style.display = 'none'; // Verstecke das Ergebnis-Div, wenn keine Ergebnisse vorhanden sind
+        return;
+    }
+    
+    resultsDiv.style.display = 'block'; // Zeige das Ergebnis-Div an
     resultsDiv.innerHTML = ''; // Clear previous results
 
     // Anzeige der Anzahl der Spieler
@@ -79,63 +86,16 @@ function find(pos, team) {
     return randomizedPlayers;
 }
 
-// ---------------- statkarten ------------------------
-
-function showStatResults(statsResult) {
-    const resultsDiv = document.getElementById('statsresults');
-    resultsDiv.innerHTML = ''; // Clear previous results
-
-    // Trennlinie
-    const hr = document.createElement('hr');
-    resultsDiv.appendChild(hr);
-
-    // Stats
-    const ul = document.createElement('ul');
-    statsResult.forEach((stat, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${index + 1}. ${stat.text}`; // Always include index
-        li.className = 'colored-stat'; // Apply class for styling
-        ul.appendChild(li);
-    });
-    resultsDiv.appendChild(ul);
-}
-
-function getSelectedStats() {
-    const selectedStats = [];
-    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked');
-    checkboxes.forEach(checkbox => {
-        const statIndex = parseInt(checkbox.value, 10);
-        selectedStats.push(getStats().find(stat => stat.i === statIndex));
-    });
-    console.log(selectedStats);
-    return selectedStats;
-}
-
-function getRandomStats(count) {
-    const stats = getSelectedStats();
-    if (stats.length === 0) {
-        alert('Bitte wähle mindestens eine Stat aus.');
-        return;
-    }
-    showStatResults(getRandomStatsArray(count, stats));
-}
-
-function getRandomStatsArray(count, stats) {
-    const pickedNums = new Set();
-
-    while (pickedNums.size < count && pickedNums.size < stats.length) {
-        const randomIndex = Math.floor(Math.random() * stats.length);
-        pickedNums.add(stats[randomIndex]);
-    }
-    return Array.from(pickedNums);
-}
-
 // ---------------- Teamsuche ------------------------
 
 function suggestPlayers() {
     const input = document.getElementById('playerName').value.toLowerCase();
     const suggestionsDiv = document.getElementById('suggestions');
     suggestionsDiv.innerHTML = '';
+    
+    const resultsDiv = document.getElementById('teamresults');
+    resultsDiv.style.display = 'block'; // Zeige das Ergebnis-Div an
+    resultsDiv.innerHTML = ''; // Vorherige Ergebnisse löschen
 
     if (input.length < 1) {
         suggestionsDiv.style.display = 'none'; // Verberge das Dropdown, wenn weniger als 1 Buchstabe eingegeben wurde
@@ -216,6 +176,58 @@ function searchTeamsByPlayer() {
     } else {
         resultsDiv.textContent = 'Spieler nicht gefunden';
     }
+}
+
+// ---------------- statkarten ------------------------
+
+function showStatResults(statsResult) {
+    const resultsDiv = document.getElementById('statsresults');
+    resultsDiv.style.display = 'block'; // Zeige das Ergebnis-Div an
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    // Trennlinie
+    const hr = document.createElement('hr');
+    resultsDiv.appendChild(hr);
+
+    // Stats
+    const ul = document.createElement('ul');
+    statsResult.forEach((stat, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${index + 1}. ${stat.text}`; // Always include index
+        li.className = 'colored-stat'; // Apply class for styling
+        ul.appendChild(li);
+    });
+    resultsDiv.appendChild(ul);
+}
+
+function getSelectedStats() {
+    const selectedStats = [];
+    const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        const statIndex = parseInt(checkbox.value, 10);
+        selectedStats.push(getStats().find(stat => stat.i === statIndex));
+    });
+    console.log(selectedStats);
+    return selectedStats;
+}
+
+function getRandomStats(count) {
+    const stats = getSelectedStats();
+    if (stats.length === 0) {
+        alert('Bitte wähle mindestens eine Stat aus.');
+        return;
+    }
+    showStatResults(getRandomStatsArray(count, stats));
+}
+
+function getRandomStatsArray(count, stats) {
+    const pickedNums = new Set();
+
+    while (pickedNums.size < count && pickedNums.size < stats.length) {
+        const randomIndex = Math.floor(Math.random() * stats.length);
+        pickedNums.add(stats[randomIndex]);
+    }
+    return Array.from(pickedNums);
 }
 
 // --------------- dropdown -------------------
