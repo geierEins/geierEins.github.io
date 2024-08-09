@@ -90,15 +90,11 @@ function loadRulesContent() {
 
         <h3>1.4  Voting-Phase</h3>
 
-        <p>In dieser Phase geht es darum, für das beste Team bzw. die zwei besten Teams auf Basis des eigenen Empfindens abzustimmen. Man darf nicht für sich selbst stimmen.</p>
+        <p>In dieser Phase geht es darum, für das beste Team auf Basis des eigenen Empfindens abzustimmen. Man darf nicht für sich selbst stimmen. Jede Stimme zählt einen Punkt.</p>
 
-        <p>Bei insgesamt 3 Spielern vergibt jeder Spieler eine Stimme für das beste Team. Jede Stimme entspricht einem Punkt.</p>
+        <p>Für welches Team die Spieler voten, hängt ganz und gar von persönlichen Beweggründen der einzelnen Mitspieler ab.</p>
 
-        <p>Bei insgesamt 4 Spielern vergibt jeder Spieler zwei Stimmen - eine für das Beste und eine für das zweitbeste Team. Die Stimme für das beste Team zählt zwei Punkte, wohingegen Stimmen für das zweitbeste Team jeweils einen Punkt zählen.</p>
-
-        <p>Für welches Team bzw. welche Teams die Spieler voten, hängt ganz und gar von persönlichen Beweggründen der Spieler ab.</p>
-
-        <p>Final werden alle Punkte aus der Stat- sowie der Voting-Phase addiert und aufgeschrieben.</p>
+        <p>Final werden alle Punkte aus der Stat- sowie der Voting-Phase addiert und aufgeschrieben. Der Spieler mit den meisten Punkten gewinnt.</p>
 
         <p> ------------------------ </p>
 

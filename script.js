@@ -115,6 +115,97 @@ function getRandomStatsArray(count) {
     return Array.from(pickedNums);
 }
 
+// ---------------- Teamsuche ------------------------
+
+function suggestPlayers() {
+    const input = document.getElementById('playerName').value.toLowerCase();
+    const suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.innerHTML = '';
+
+    if (input.length < 1) {
+        suggestionsDiv.style.display = 'none'; // Verberge das Dropdown, wenn weniger als 1 Buchstabe eingegeben wurde
+        return;
+    }
+
+    const allPlayers = getPlayers();
+    const suggestions = allPlayers
+        .filter(player => 
+            player.vorname.toLowerCase().includes(input) || 
+            player.nachname.toLowerCase().includes(input)
+        )
+        .sort((a, b) => {
+            // Sortiere nach Nachnamen und dann Vorname
+            const nameA = `${a.nachname.toLowerCase()} ${a.vorname.toLowerCase()}`;
+            const nameB = `${b.nachname.toLowerCase()} ${b.vorname.toLowerCase()}`;
+            return nameA.localeCompare(nameB);
+        })
+        .slice(0, 10); // Maximal 10 Vorschläge anzeigen
+
+    if (suggestions.length > 0) {
+        suggestionsDiv.style.display = 'block'; // Zeige das Dropdown an, wenn es Vorschläge gibt
+        suggestions.forEach(player => {
+            const div = document.createElement('div');
+            div.className = 'suggestion-item';
+            // Zeige den Namen im Format [Nachname], [Vorname] an
+            div.textContent = `${player.nachname}, ${player.vorname}`;
+            div.onclick = () => selectSuggestion(`${player.nachname}, ${player.vorname}`);
+            suggestionsDiv.appendChild(div);
+        });
+    } else {
+        suggestionsDiv.style.display = 'none'; // Verberge das Dropdown, wenn keine Vorschläge vorhanden sind
+    }
+}
+
+function selectSuggestion(name) {
+    document.getElementById('playerName').value = name;
+    document.getElementById('suggestions').innerHTML = '';
+}
+
+function searchTeamsByPlayer() {
+    const input = document.getElementById('playerName').value.toLowerCase();
+    const allPlayers = getPlayers();
+    const resultsDiv = document.getElementById('teamresults');
+    resultsDiv.innerHTML = ''; // Vorherige Ergebnisse löschen
+
+    const player = allPlayers.find(player => 
+        `${player.nachname.toLowerCase()}, ${player.vorname.toLowerCase()}` === input
+    );
+
+    if (player) {
+        const teamDetails = player.teams
+            .map(team => {
+                // Finde den ausgeschriebenen Namen des Teams
+                const teamName = TeamNames[team.n] || team.n;
+                // Finde das Kürzel des Teams
+                const teamCode = team.n;
+                
+                // Finde das zugehörige Franchise
+                const franchiseKey = Object.keys(teamAliases).find(franchiseKey => 
+                    teamAliases[franchiseKey].includes(teamCode)
+                );
+
+                const franchiseName = franchiseKey ? TeamNames[franchiseKey] : null;
+                const franchiseCode = franchiseKey || teamCode;
+                
+                // Formatieren der Teamdetails
+                let detail = `${teamName} (${teamCode})`;
+                if (franchiseKey && franchiseKey !== teamCode) {
+                    detail += ` --> ${franchiseName} (${franchiseCode})`;
+                }
+
+                return `• ${detail}`;
+            })
+            .join('<br>'); // Trennung durch Zeilenumbrüche
+
+        resultsDiv.innerHTML = `Teams von ${player.vorname} ${player.nachname}:<br><br>${teamDetails}`;
+    } else {
+        resultsDiv.textContent = 'Spieler nicht gefunden';
+    }
+}
+
+
+
+
 // --------------- dropdown -------------------
 document.addEventListener('DOMContentLoaded', (event) => {
     populateStatCheckboxes();

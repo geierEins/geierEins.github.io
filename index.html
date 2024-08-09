@@ -11,6 +11,8 @@
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Spieler')" id="defaultOpen">Spielersuche</button>
     <button class="tablinks" onclick="openTab(event, 'Stats')">Statkarten</button>
+    <button class="tablinks" onclick="openTab(event, 'Teamsuche')">Teamsuche</button>
+    <button class="tablinks" onclick="openTab(event, 'BasketballReference')">Basketball Reference</button>
     <button class="tablinks" onclick="openTab(event, 'Regeln')">Spielregeln</button>
 </div>
 
@@ -66,7 +68,7 @@
 
         <div style="margin-bottom: 20px;"></div>
 
-        <button class="search-btn" onclick="searchPlayers()">Suche</button>
+        <button class="search-btn" onclick="searchPlayers()">Suchen</button>
         <button class="search-btn" onclick="getAllPlayers()">Alle Spieler</button>
         <button class="debug-btn" onclick="logDuplicates()">Finde Duplikate</button>
         <button class="debug-btn" onclick="logInvalidPositions()">invalid positions</button>
@@ -99,13 +101,42 @@
         <div id="statsresults" class="results"></div>
     </div>
 </div>
+    
+<!-- Teamsuche Tab -->
+<div id="Teamsuche" class="tabcontent">
+    <div class="container">
+        <label for="playerName">Spielername:</label>
+        <input type="text" id="playerName" class="inputfield" oninput="suggestPlayers()" placeholder="Spieler eingeben..." autocomplete="off">
+        <div id="suggestions" class="suggestions"></div>
+        <div style="margin-bottom: 20px;"></div>
+        <button class="search-btn" onclick="searchTeamsByPlayer()">Suche Teams</button>
+        <div style="margin-bottom: 20px;"></div>
+        <div id="teamresults" class="results"></div>
+    </div>
+</div>
 
+<!-- Basketball Reference Tab -->
+<div id="BasketballReference" class="tabcontent">
+    <div class="container">
+        <div class="search-wrapper">
+            <form id="basketballSearchForm" target="_blank" action="https://www.basketball-reference.com/search/search.fcgi">
+                <label for="playerSearch">Spielername:</label>
+                <input type="text" id="playerSearch" name="search" placeholder="Spieler eingeben..." required>
+                <button class="search-btn">Suchen</button>
+            </form>
+            <div id="basketballSuggestions" class="suggestions"></div>
+        </div>
+    </div>
+</div>
+
+    
 <!-- Regeln Tab -->
 <div id="Regeln" class="tabcontent">
     <div class="container">
         <div id="rulesContent" class="rules-content"></div>
     </div>
-</div>    
+</div>
+
 
 <script>
     function openTab(evt, tabName) {

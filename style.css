@@ -242,3 +242,54 @@ label {
     font-size: 16px; /* Text */
     margin-bottom: 4px;
 }
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+    font-size: 16px;
+}
+
+/* Textinput-Feld */
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+    font-size: 16px;
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+}
+
+input[type="text"]::placeholder {
+    color: #a0a0a0; /* Placeholder-Farbe anpassen */
+}
+
+/* Suggestions-Dropdown */
+.suggestions {
+    border: 1px solid #ccc;
+    max-height: 500px; /* Festgelegte maximale Höhe */
+    width: 90%; /* Gleiche Breite wie das Textinput-Feld */
+    overflow-y: auto; /* Ermöglicht Scrollen, wenn die Höhe überschritten wird */
+    background-color: #2e2e2e; /* Hintergrundfarbe passend zum Thema */
+    position: absolute;
+    z-index: 1000;
+    border-radius: 5px; /* Abgerundete Ecken */
+    display: none; /* Standardmäßig verborgen */
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+    color: #e0e0e0; /* Textfarbe passend zum Thema */
+    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+}
+
+.suggestion-item:hover {
+    background-color: #3c3c3c; /* Hover-Effekt für die Vorschlags-Items */
+}

@@ -34,7 +34,8 @@ const stats = [
     {i: 24, text: "Win Shares (Karriereschnitt)"},
 
     // Rest
-    {i: 25, text: "Höchste Rückennummer"}
+    {i: 25, text: "Höchste Rückennummer"},
+    {i: 26, text: "Körpergröße"}
     
 ];
 
