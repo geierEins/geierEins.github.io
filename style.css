@@ -134,6 +134,7 @@ label {
     padding: 0; /* Entfernt Standard-Padding */
     margin: 0; /* Entfernt Standard-Margin */
 }
+
 .tab button {
     flex: 1 1 auto; /* Tabs flexibel machen */
     padding: 14px 16px;
@@ -145,6 +146,7 @@ label {
     transition: background-color 0.3s;
     margin: 1px; /* Abstand zwischen den Tabs */
 }
+
 .tab button:hover {
     background-color: #555;
 }
@@ -185,6 +187,12 @@ label {
     overflow-y: auto;
     height: calc(100vh - 60px); /* Höhe anpassen, um Platz für die fixe Tab-Leiste zu schaffen */
     flex: 1; /* Nimmt den verfügbaren Platz ein und macht den Inhalt scrollbar */
+}
+
+@media (max-width: 550px) {
+    .tabcontent {
+        margin-top: 90px; /* Erhöhtes Top-Margin für mobile Geräte, falls die Tab-Leiste größer ist */
+    }
 }
 
 /* Dropdown Container */
