@@ -186,7 +186,7 @@ label {
 @media (max-width: 549px) {
     .tabcontent {
         margin-top: 90px; /* Erhöhtes Top-Margin für mobile Geräte, falls die Tab-Leiste größer ist */
-        height: calc(100vh - 110px); /* Höhe anpassen, um Platz für die fixe Tab-Leiste zu schaffen */
+        padding-bottom: 100px; /* Zusätzlicher Platz unten */
     }
 }
 
@@ -347,7 +347,7 @@ input[type="text"]::placeholder {
 .suggestions {
     border: 1px solid #ccc;
     max-height: 500px; /* Festgelegte maximale Höhe */
-    width: 90%; /* Gleiche Breite wie das Textinput-Feld */
+    width: 70%; /* Gleiche Breite wie das Textinput-Feld */
     overflow-y: auto; /* Ermöglicht Scrollen, wenn die Höhe überschritten wird */
     background-color: #2e2e2e; /* Hintergrundfarbe passend zum Thema */
     position: absolute;
