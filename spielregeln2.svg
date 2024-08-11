@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="800px"
+   width="800px"
+   version="1.1"
+   id="_x32_"
+   viewBox="0 0 512 512"
+   xml:space="preserve"
+   sodipodi:docname="spielregeln2.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"><metadata
+   id="metadata15"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs13" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="713"
+   inkscape:window-height="480"
+   id="namedview11"
+   showgrid="false"
+   inkscape:zoom="0.18782524"
+   inkscape:cx="277.63539"
+   inkscape:cy="61.533515"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="_x32_" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:#000000;}
+</style>
+<g
+   id="g8"
+   style="fill:#ffffff">
+	<path
+   class="st0"
+   d="M314.022,167.059c-21.788,0-41.358,0-60.564,0H0v91.268l122.43,21.778c23.356,4.153,43.101,19.682,52.644,41.4   c0,0,4.585,8.504,7.837,17.85c19.608,56.341,68.563,99.722,131.111,99.722c75.117,0,136.009-60.897,136.009-136.01   C450.031,227.956,389.139,167.059,314.022,167.059z M314.022,355.472c-28.945,0-52.408-23.464-52.408-52.404   c0-28.939,23.464-52.413,52.408-52.413c28.944,0,52.408,23.474,52.408,52.413C366.43,332.008,342.966,355.472,314.022,355.472z"
+   id="path4"
+   style="fill:#ffffff" />
+	<path
+   class="st0"
+   d="M375.991,72.922c-40.945,0-274.535,0-274.535,0L2.008,144.233h145.575h125.84h40.94   c86.056,0,156.068,70.772,156.068,156.828c0,4.428-0.299,8.787-0.666,13.127l18.839-28.988c0.166-0.245,0.318-0.5,0.48-0.744   l3.478-5.721C504.824,258.307,512,234.491,512,208.932C512,133.82,451.108,72.922,375.991,72.922z M291.391,130.821h-62.66   l55.66-46.662h62.66L291.391,130.821z"
+   id="path6"
+   style="fill:#ffffff" />
+</g>
+</svg>
