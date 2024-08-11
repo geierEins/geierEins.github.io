@@ -91,6 +91,7 @@ function find(pos, team) {
 function suggestPlayers() {
     const input = document.getElementById('playerName').value.toLowerCase();
     const suggestionsDiv = document.getElementById('suggestions');
+    suggestionsDiv.style.display = 'block';
     suggestionsDiv.innerHTML = '';
     
     const resultsDiv = document.getElementById('teamresults');
@@ -176,6 +177,7 @@ function searchTeamsByPlayer() {
     } else {
         resultsDiv.textContent = 'Spieler nicht gefunden';
     }
+    document.getElementById('suggestions').style.display = 'none';
 }
 
 // ---------------- statkarten ------------------------

@@ -83,7 +83,6 @@
             <button class="debug-btn" onclick="logInvalidPositions()">invalid positions</button>
             <button class="debug-btn" onclick="logInvalidTeams()">invalid teams</button>
     -->
-
             <div id="playerresults" class="results"></div>
         </div>
     </div>
@@ -113,34 +112,6 @@
                         <!-- Checkboxes will be dynamically populated here -->
                     </div>          
                 </div>
-                <script>
-                    const stats = getStats();
-
-                    const dropdownContent = document.getElementById('dropdown-content');
-
-                    for (const category in stats) {
-                        // Kategorie-Überschrift hinzufügen
-                        const header = document.createElement('div');
-                        header.className = 'category-header';
-                        header.textContent = category;
-                        dropdownContent.appendChild(header);
-
-                        // Checkboxen für die Statistiken hinzufügen
-                        for (const key in stats[category]) {
-                            const label = document.createElement('label');
-                            const checkbox = document.createElement('input');
-                            checkbox.type = 'checkbox';
-                            checkbox.name = key;
-                            checkbox.value = key;
-
-                            label.appendChild(checkbox);
-                            label.appendChild(document.createTextNode(stats[category][key]));
-
-                            dropdownContent.appendChild(label);
-                        }
-                    }
-                </script>
-
                 <button class="randomstat-btn" onclick="getRandomStats(1)">1 Random Stat</button>
                 <button class="randomstat-btn" onclick="getRandomStats(5)">5 Random Stats</button>
             </div>
