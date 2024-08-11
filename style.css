@@ -183,15 +183,20 @@ label {
 }
 
 /* Spacer Element */
-.spacer {
+.spacer-top, .spacer-bottom {
     display: none; /* Standardmäßig verstecken */
 }
 
 /* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
 @media (max-width: 549px) {
-    .spacer {
+    .spacer-top {
         display: block; /* Sichtbar machen */
-        height: 45px; /* Höhe festlegen */
+        height: 50px; /* Höhe festlegen */
+        background-color: #2e2e2e;
+    }
+    .spacer-bottom {
+        display: block; /* Sichtbar machen */
+        height: 70px; /* Höhe festlegen */
         background-color: #2e2e2e;
     }
 }

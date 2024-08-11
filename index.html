@@ -26,7 +26,7 @@
     <button class="tablinks" id="tabSpielregeln" onclick="openTab(event, 'Spielregeln')">Spielregeln</button>
 </div>    
 
-<div class="spacer"></div>
+<div class="spacer-top"></div>
     
 <!-- Spielersuche Tab -->
 <div id="Spielersuche" class="tabcontent">
@@ -86,7 +86,6 @@
         <button class="debug-btn" onclick="logInvalidPositions()">invalid positions</button>
         <button class="debug-btn" onclick="logInvalidTeams()">invalid teams</button>
 -->
-        <div style="margin-bottom: 20px;"></div>
 
         <div id="playerresults" class="results"></div>
     </div>
@@ -120,8 +119,6 @@
             <button class="randomstat-btn" onclick="getRandomStats(1)">1 Random Stat</button>
             <button class="randomstat-btn" onclick="getRandomStats(5)">5 Random Stats</button>
         </div>
-
-        <div style="margin-bottom: 20px;"></div>
         
         <div id="statsresults" class="results"></div>
     </div>
@@ -149,7 +146,7 @@
     </div>
 </div>
 
-<div class="spacer"></div>
+<div class="spacer-bottom"></div>
 
 <script>
     function openTab(evt, tabName) {
