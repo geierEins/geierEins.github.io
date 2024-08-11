@@ -214,6 +214,9 @@ label {
     position: absolute;
     background-color: #3c3c3c;
     min-width: 200px;
+    max-height: 300px; /* Feste Höhe festlegen */
+    overflow-y: auto; /* Scrollbar hinzufügen */
+    overflow-x: hidden; /* Horizontales Scrollen verhindern */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 12px;
