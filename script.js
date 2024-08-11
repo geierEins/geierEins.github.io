@@ -240,7 +240,7 @@ function populateStatCheckboxes() {
     const dropdownContent = document.querySelector('.dropdown-content');
     stats.forEach(stat => {
         const label = document.createElement('label');
-        label.innerHTML = `<input type="checkbox" checked value="${stat.i}"> ${stat.text}`;
+        label.innerHTML = `<input type="checkbox" checked value="${stat.i}"> ${stat.short}`;
         dropdownContent.appendChild(label);
     });
 }
