@@ -37,17 +37,7 @@ label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-}
-
-.dropdown {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #3c3c3c;
-    color: #e0e0e0;
-}   
+}  
 
 .search-btn, .searchteam-btn, .randomstat-btn, .searchbbref-btn, .debug-btn, .dropbtn {
     padding: 10px 20px;
@@ -201,11 +191,21 @@ label {
     }
 }
 
-/* Dropdown Container */
+/* Dropdown */
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background-color: #3c3c3c;
+    color: #e0e0e0;
+} 
+
 .dropdown-checkbox {
     color: #32a893;
     position: relative;
     display: inline-block;
+    border-radius: 5px;
 }
 
 /* Dropdown Content (hidden by default) */
@@ -214,13 +214,14 @@ label {
     position: absolute;
     background-color: #3c3c3c;
     min-width: 200px;
-    max-height: 300px; /* Feste Höhe festlegen */
+    max-height: 350px; /* Feste Höhe festlegen */
     overflow-y: auto; /* Scrollbar hinzufügen */
     overflow-x: hidden; /* Horizontales Scrollen verhindern */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 12px;
     font-weight: normal;
+    border-radius: 5px;
 }
 
 /* Show the dropdown menu on hover */
