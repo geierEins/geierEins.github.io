@@ -13,7 +13,6 @@ body {
     margin: 10px;
     padding: 10px;
     background-color: #2e2e2e;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -187,6 +186,7 @@ label {
 /* Spacer Element */
 .spacer {
     display: none; /* Standardmäßig verstecken */
+    background-color: #2e2e2e;
 }
 
 /* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
