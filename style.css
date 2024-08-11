@@ -183,7 +183,7 @@ label {
 }
 
 /* Spacer Element */
-.spacer-top {
+.spacer-top, .spacer-bottom {
     display: none; /* Standardmäßig verstecken */
 }
 
@@ -192,6 +192,11 @@ label {
     .spacer-top {
         display: block; /* Sichtbar machen */
         height: 50px; /* Höhe festlegen */
+        background-color: #2e2e2e;
+    }
+     .spacer-bottom {
+        display: block; /* Sichtbar machen */
+        height: 60px; /* Höhe festlegen */
         background-color: #2e2e2e;
     }
 }
