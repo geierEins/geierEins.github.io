@@ -196,7 +196,7 @@ label {
     }
     .spacer-bottom {
         display: block; /* Sichtbar machen */
-        height: 70px; /* Höhe festlegen */
+        height: 60px; /* Höhe festlegen */
         background-color: #2e2e2e;
     }
 }
