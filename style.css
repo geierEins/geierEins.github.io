@@ -183,14 +183,16 @@ label {
     flex: 1; /* Nimmt den verfügbaren Platz ein und macht den Inhalt scrollbar */
 }
 
+/* Spacer Element */
+.spacer {
+    display: none; /* Standardmäßig verstecken */
+}
+
+/* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
 @media (max-width: 549px) {
-    .tabcontent {
-        margin-top: 90px; /* Erhöhtes Top-Margin für mobile Geräte, falls die Tab-Leiste größer ist */
-        padding-bottom: 100px; /* Zusätzlicher Platz unten */
-    }
-    body, html {
-        height: 100%; /* Stellt sicher, dass der Body die volle Höhe des Viewports einnimmt */
-        overflow: hidden; /* Verhindert zusätzliches Scrollen */
+    .spacer {
+        display: block; /* Sichtbar machen */
+        height: 45px; /* Höhe festlegen */
     }
 }
 
