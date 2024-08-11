@@ -153,7 +153,6 @@ label {
 /* Spezifische aktive Klassen */
 #tabSpielersuche.active {
     background-color: #4caf50; /* Farbe für Spielersuche */
-    background-color: #fff; /* Farbe für Spielersuche */
 }
 #tabTeamsuche.active {
     background-color: #25619C; /* Farbe für Teamsuche */
@@ -186,7 +185,6 @@ label {
 /* Spacer Element */
 .spacer {
     display: none; /* Standardmäßig verstecken */
-    background-color: #2e2e2e;
 }
 
 /* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
@@ -194,6 +192,7 @@ label {
     .spacer {
         display: block; /* Sichtbar machen */
         height: 45px; /* Höhe festlegen */
+        background-color: #2e2e2e;
     }
 }
 
@@ -247,14 +246,6 @@ label {
 .debug-btn {
     display: none;
 }
-
-/* Zeigen Sie die Debug-Buttons auf Geräten mit einer Breite von mindestens 768px an (typische Breite für Tablets im Hochformat) */
-@media (min-width: 768px) {
-    .debug-btn {
-        display: inline-block;
-    }
-}
-
 
 /* Styles for colored stats */
 .colored-stat {
