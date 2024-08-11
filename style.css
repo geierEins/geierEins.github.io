@@ -154,6 +154,7 @@ label {
 /* Spezifische aktive Klassen */
 #tabSpielersuche.active {
     background-color: #4caf50; /* Farbe für Spielersuche */
+    background-color: #fff; /* Farbe für Spielersuche */
 }
 #tabTeamsuche.active {
     background-color: #25619C; /* Farbe für Teamsuche */
