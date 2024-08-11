@@ -188,6 +188,10 @@ label {
         margin-top: 90px; /* Erhöhtes Top-Margin für mobile Geräte, falls die Tab-Leiste größer ist */
         padding-bottom: 100px; /* Zusätzlicher Platz unten */
     }
+    body, html {
+        height: 100%; /* Stellt sicher, dass der Body die volle Höhe des Viewports einnimmt */
+        overflow: hidden; /* Verhindert zusätzliches Scrollen */
+    }
 }
 
 /* Dropdown Container */
