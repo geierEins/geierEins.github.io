@@ -112,6 +112,7 @@ label {
 .tab {
     position: fixed;
     top: 0;
+    height: 45px;
     width: 100%;
     z-index: 1000; /* Damit die Tab-Leiste über dem Inhalt bleibt */
     display: flex;
@@ -125,20 +126,28 @@ label {
     margin: 0; /* Entfernt Standard-Margin */
 }
 
+/* Tab-Button Styling */
 .tab button {
-    flex: 1 1 auto; /* Tabs flexibel machen */
-    padding: 14px 16px;
     background-color: #3c3c3c;
     color: #e0e0e0;
+    padding: 5px 10px; /* Weniger Padding für kleinere Höhe */
     border: none;
-    outline: none;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 1px; /* Abstand zwischen den Tabs */
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Abstand zwischen Icon und Text */
 }
 
 .tab button:hover {
     background-color: #555;
+}
+
+/* Icon Styling */
+.tab-icon {
+    height: 30px; /* Kleinere Icons */
+    margin-right: 15px; /* Weniger Platz zwischen Icon und Text */
 }
 
 /* Spezifische aktive Klassen */
@@ -180,16 +189,13 @@ label {
 
 /* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
 @media (max-width: 549px) {
-    .spacer-top {
-        display: block; /* Sichtbar machen */
-        height: 50px; /* Höhe festlegen */
-        background-color: #2e2e2e;
+    .tab button .tab-text {
+        display: none; /* Versteckt den Text auf mobilen Geräten */
     }
-     .spacer-bottom {
-        display: block; /* Sichtbar machen */
-        height: 55px; /* Höhe festlegen */
-        background-color: #2e2e2e;
+    .tab button .tab-icon {
+        margin-left: 13px; /* Anpassung der Verschiebung, um die Icons zu zentrieren */
     }
+
 }
 
 /* Dropdown */
