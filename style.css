@@ -186,6 +186,7 @@ label {
 @media (max-width: 549px) {
     .tabcontent {
         margin-top: 90px; /* Erhöhtes Top-Margin für mobile Geräte, falls die Tab-Leiste größer ist */
+        height: calc(100vh - 110px); /* Höhe anpassen, um Platz für die fixe Tab-Leiste zu schaffen */
     }
 }
 
