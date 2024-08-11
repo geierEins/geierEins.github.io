@@ -1,14 +1,16 @@
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #1c1c1c;
     margin: 0;
     padding: 0;
     overflow-y: hidden;
-    height: 100vh; /* Höhe des Viewports */
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* Container Styles */
 .container {
     margin: 10px;
     padding: 10px;
@@ -17,29 +19,23 @@ body {
     border-radius: 5px;
 }
 
-.results {
-    display: none; /* Initial verstecken */
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #3c3c3c;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
+/* Button Container Styles */
 .button-container {
     display: flex;
-    justify-content: center; /* Zentriert die Buttons horizontal */
-    align-items: center; /* Zentriert die Buttons vertikal, falls nötig */
-    flex-wrap: wrap; /* Ermöglicht das Umbrechen der Buttons in die nächste Zeile */
-    gap: 5px; /* Optional: Abstand zwischen den Buttons */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
+/* Label Styles */
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-}  
+}
 
+/* Button Styles */
 .search-btn, .searchteam-btn, .randomstat-btn, .searchbbref-btn, .debug-btn, .dropbtn {
     padding: 10px 20px;
     margin: 10px 0;
@@ -50,7 +46,52 @@ label {
     height: 40px;
 }
 
-/* Dropdown Button für Stats */
+.search-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.debug-btn {
+    background-color: #ff9800;
+    color: white;
+    display: none;
+}
+
+.searchteam-btn {
+    background-color: #25619C;
+    color: white;
+}
+
+.randomstat-btn {
+    background-color: #21c4a7;
+    color: white;
+}
+
+.searchbbref-btn {
+    background-color: #CC6600;
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: #57de5c;
+}
+
+.debug-btn:hover {
+    background-color: #ffaf38;
+}
+
+.searchteam-btn:hover {
+    background-color: #2370BD;
+}
+
+.randomstat-btn:hover {
+    background-color: #2AD1B5;
+}
+
+.searchbbref-btn:hover {
+    background-color: #EB8826;
+}
+
 .dropbtn {
     min-width: 270px;
     background-color: #1E9C9C;
@@ -61,114 +102,73 @@ label {
     border-radius: 5px;
 }
 
-.search-btn {
-    background-color: #4caf50;
-    color: white;
-}
-.debug-btn {
-    background-color: #ff9800;
-    color: white;
-}
-.searchteam-btn{
-    background-color: #25619C;
-    color: white;
-}
-.randomstat-btn{
-    background-color: #21c4a7;
-    color: white;
-}
-.searchbbref-btn{
-    background-color: #CC6600;
-    color: white;
-}
-
-.search-btn:hover {
-    background-color: #57de5c;
-}
-.debug-btn:hover {
-    background-color: #ffaf38;
-}
-.searchteam-btn:hover {
-    background-color: #2370BD;
-}
-.randomstat-btn:hoover{
-    background-color: #2AD1B5;
-}
-.searchbbref-btn:hover {
-    background-color: #EB8826;
-}
 .dropbtn:hover {
     background-color: #21B0B0;
 }
 
-.results {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #3c3c3c;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
+/* Tab Styles */
 .tab {
     position: fixed;
     top: 0;
     height: 45px;
     width: 100%;
-    z-index: 1000; /* Damit die Tab-Leiste über dem Inhalt bleibt */
+    z-index: 1000;
     display: flex;
-    flex-wrap: wrap; /* Zeilenumbruch ermöglichen */
-    justify-content: space-between; /* Tabs gleichmäßig verteilen */
+    flex-wrap: wrap;
+    justify-content: space-between;
     border-bottom: 1px solid #ccc;
     background-color: #2e2e2e;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 0; /* Entfernt Standard-Padding */
-    margin: 0; /* Entfernt Standard-Margin */
+    padding: 0;
+    margin: 0;
 }
 
-/* Tab-Button Styling */
 .tab button {
     background-color: #3c3c3c;
     color: #e0e0e0;
-    padding: 5px 10px; /* Weniger Padding für kleinere Höhe */
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
     width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Abstand zwischen Icon und Text */
+    gap: 8px;
 }
 
 .tab button:hover {
     background-color: #555;
 }
 
-/* Icon Styling */
+/* Icon Styles */
 .tab-icon {
-    height: 30px; /* Kleinere Icons */
-    margin-right: 15px; /* Weniger Platz zwischen Icon und Text */
+    height: 30px;
+    margin-right: 15px;
 }
 
-/* Spezifische aktive Klassen */
+/* Active Tab Styles */
 #tabSpielersuche.active {
-    background-color: #4caf50; /* Farbe für Spielersuche */
+    background-color: #4caf50;
 }
+
 #tabTeamsuche.active {
-    background-color: #25619C; /* Farbe für Teamsuche */
+    background-color: #25619C;
 }
+
 #tabStatkarten.active {
-    background-color: #1E9C9C; /* Farbe für Statkarten */
+    background-color: #1E9C9C;
 }
+
 #tabBballRef.active {
-    background-color: #C76E15; /* Farbe für Basketball Reference */
+    background-color: #C76E15;
 }
+
 #tabSpielregeln.active {
-    background-color: #DE6176; /* Farbe für Spielregeln */
+    background-color: #DE6176;
 }
 
-
-/* Style für die Tab-Inhalte */
+/* Tab Content Styles */
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -176,29 +176,23 @@ label {
     background-color: #2e2e2e;
     color: #e0e0e0;
     border-radius: 0 0 5px 5px;
-    margin-top: 45px; /* Platz für die fixe Tab-Leiste */
+    margin-top: 45px;
     overflow-y: auto;
-    height: calc(100vh - 60px); /* Höhe anpassen, um Platz für die fixe Tab-Leiste zu schaffen */
-    flex: 1; /* Nimmt den verfügbaren Platz ein und macht den Inhalt scrollbar */
+    height: calc(100vh - 60px);
+    flex: 1;
 }
 
-/* Spacer Element */
-.spacer-top, .spacer-bottom {
-    display: none; /* Standardmäßig verstecken */
-}
-
-/* Sichtbar und Höhe festlegen bei einer Breite bis 549px */
+/* Media Queries for Mobile Devices */
 @media (max-width: 549px) {
     .tab button .tab-text {
-        display: none; /* Versteckt den Text auf mobilen Geräten */
+        display: none;
     }
     .tab button .tab-icon {
-        margin-left: 13px; /* Anpassung der Verschiebung, um die Icons zu zentrieren */
+        margin-left: 13px;
     }
-
 }
 
-/* Dropdown */
+/* Dropdown Styles */
 .dropdown {
     width: 100%;
     padding: 10px;
@@ -206,7 +200,7 @@ label {
     border: none;
     background-color: #3c3c3c;
     color: #e0e0e0;
-} 
+}
 
 .dropdown-checkbox {
     color: #32a893;
@@ -215,15 +209,14 @@ label {
     border-radius: 5px;
 }
 
-/* Dropdown Content (hidden by default) */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #3c3c3c;
     min-width: 200px;
-    max-height: 350px; /* Feste Höhe festlegen */
-    overflow-y: auto; /* Scrollbar hinzufügen */
-    overflow-x: hidden; /* Horizontales Scrollen verhindern */
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 12px;
@@ -231,13 +224,11 @@ label {
     border-radius: 5px;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown-checkbox:hover .dropdown-content {
     color: #e0e0e0;
     display: block;
 }
 
-/* Style for checkboxes */
 .dropdown-content label {
     color: white;
     padding: 2px 8px;
@@ -246,7 +237,7 @@ label {
     white-space: nowrap;
 }
 
-.dropdown-content label:hover{
+.dropdown-content label:hover {
     color: #32a893;
 }
 
@@ -254,16 +245,17 @@ label {
     margin-right: 10px;
 }
 
-#statsresults ul {
-    list-style-type: none;
-}
-
-/* Standardmäßig verstecken wir die Debug-Buttons */
-.debug-btn {
+/* Results Styles */
+.results {
     display: none;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #3c3c3c;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Styles for colored stats */
+/* Colored Stats Styles */
 .colored-stat {
     color: #1c1c1c;
     font-size: 18px;
@@ -271,10 +263,14 @@ label {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
-    list-style-type: none; /* Ensure there are no bullets */
+    list-style-type: none;
 }
 
-/* Specific colors for stats */
+/* Specific Colors for Stats */
+#statsresults ul {
+    list-style-type: none;
+}
+
 #statsresults ul li:nth-child(1) {
     background-color: #ed6880;
 }
@@ -295,7 +291,7 @@ label {
     background-color: #c793e8;
 }
 
-/* Styles for the rules content */
+/* Rules Content Styles */
 .rules-content {
     height: 100%;
     overflow: visible;
@@ -303,7 +299,7 @@ label {
     padding: 10px;
     background-color: #3c3c3c;
     border-radius: 5px;
-    color: #e0e0e0; /* Schriftfarbe */
+    color: #e0e0e0;
 }
 
 .rules-content h1 {
@@ -314,22 +310,23 @@ label {
 
 .rules-content h2 {
     color: #ffa07a;
-    font-size: 20px; /* Hauptkapitel */
+    font-size: 20px;
     margin-bottom: 8px;
 }
 
 .rules-content h3 {
     color: #5dc4c2;
-    font-size: 18px; /* Unterkapitel */
+    font-size: 18px;
     margin-bottom: 6px;
 }
 
 .rules-content h4 {
     color: #99cc66;
-    font-size: 16px; /* Text */
+    font-size: 16px;
     margin-bottom: 4px;
 }
 
+/* Input Styles */
 input[type="text"] {
     width: 100%;
     padding: 10px;
@@ -339,44 +336,33 @@ input[type="text"] {
     background-color: #3c3c3c;
     color: #e0e0e0;
     font-size: 16px;
-}
-
-/* Textinput-Feld */
-input[type="text"] {
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #3c3c3c;
-    color: #e0e0e0;
-    font-size: 16px;
-    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+    box-sizing: border-box;
 }
 
 input[type="text"]::placeholder {
-    color: #a0a0a0; /* Placeholder-Farbe anpassen */
+    color: #a0a0a0;
 }
 
-/* Suggestions-Dropdown */
+/* Suggestions Dropdown Styles */
 .suggestions {
     border: 1px solid #ccc;
-    max-height: 500px; /* Festgelegte maximale Höhe */
-    width: 70%; /* Gleiche Breite wie das Textinput-Feld */
-    overflow-y: auto; /* Ermöglicht Scrollen, wenn die Höhe überschritten wird */
-    background-color: #2e2e2e; /* Hintergrundfarbe passend zum Thema */
+    max-height: 500px;
+    width: 70%;
+    overflow-y: auto;
+    background-color: #2e2e2e;
     position: absolute;
     z-index: 1000;
-    border-radius: 5px; /* Abgerundete Ecken */
-    display: none; /* Standardmäßig verborgen */
+    border-radius: 5px;
+    display: none;
 }
 
 .suggestion-item {
     padding: 8px;
     cursor: pointer;
-    color: #e0e0e0; /* Textfarbe passend zum Thema */
-    box-sizing: border-box; /* Stellt sicher, dass Padding und Border in der Breite enthalten sind */
+    color: #e0e0e0;
+    box-sizing: border-box;
 }
 
 .suggestion-item:hover {
-    background-color: #3c3c3c; /* Hover-Effekt für die Vorschlags-Items */
+    background-color: #3c3c3c;
 }
