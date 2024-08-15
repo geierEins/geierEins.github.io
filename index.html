@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-tables.css">
 </head>
 <body>
     <script src="stats.js"></script>
@@ -12,6 +13,7 @@
     <script src="team.js"></script>
     <script src="players.js"></script>
     <script src="rules.js"></script>
+    <script src="tables.js" defer></script>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 
 <div class="tab">
@@ -29,6 +31,10 @@
     </button>
     <button class="tablinks" id="tabSpielregeln" onclick="openTab(event, 'Spielregeln')">
         <img src="icon/spielregeln2.svg" alt="Spielregeln Icon" class="tab-icon"> <span class="tab-text">Spielregeln</span>
+    </button>
+    
+    <button class="tablinks" id="tabTables" onclick="openTab(event, 'Tables')">
+        <img src="icon/search.svg" alt="Tables Icon" class="tab-icon"> <span class="tab-text">Tables</span>
     </button>
 </div>
 
@@ -148,7 +154,24 @@
             <div id="rulesContent" class="rules-content"></div>
         </div>
     </div>
-
+    
+    <!-- Tables Tab -->
+    <div id="Tables" class="tabcontent">
+        <div class="table-tabs">
+            <button class="tables-tablinks" id="player1tab" onclick="openPlayer(event, 1)">Player 1</button>
+            <button class="tables-tablinks" id="player2tab" onclick="openPlayer(event, 2)">Player 2</button>
+            <button class="tables-tablinks" id="player3tab" onclick="openPlayer(event, 3)">Player 3</button>
+        </div>
+        <div class="tables-container">
+            <div id="player-tables">
+                <!-- Tables will be dynamically generated here -->
+            </div>
+        </div>
+        <div class="navbuttons-container">
+            <button class="nav-buttons" id="btn-tablesnav-back" onclick="navigateRound(-1)">←</button>
+            <button class="nav-buttons" id="btn-tablesnav-next" onclick="navigateRound(1)">→</button>
+        </div>
+    </div>
 
     <script>
         function openTab(evt, tabName) {

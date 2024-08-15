@@ -1,0 +1,116 @@
+/* CSS für die Tabellen- und Navigationselemente */
+
+#roundHeading {
+    margin: 0; /* Kein Abstand oben und unten */
+    text-align: center;  /* Zentrierung des Textes */
+    font-size: 20px;  /* Schriftgröße */
+    color: white;  /* Textfarbe */
+}
+
+.tables-container {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tables-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tables-container th, .tables-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tables-container th {
+    background-color: #363636; /* Gleiche Hintergrundfarbe wie für die Tabellenzeilen */
+    color: white; /* Gleiche Textfarbe wie für die Tabellenzeilen */
+}
+
+.tables-container td:first-child {
+    text-align: center; /* Inhalt der ersten Spalte zentriert */
+    width: 60px; /* Breite der ersten Spalte */
+}
+
+.tables-container td:last-child {
+    text-align: center; /* Inhalt der letzten Spalte zentriert */
+    width: 80px; /* Breite der letzten Spalte */
+}
+
+.tables-container td {
+    width: auto; /* Breite der mittleren Spalte automatisch */
+}
+
+.navbuttons-container {
+    display: flex;
+    justify-content: space-between; /* Gleichmäßig verteilen */
+}
+
+.nav-buttons {
+    background-color: #363636;
+    color: white;
+    height: 40px;
+    border: none;
+    text-align: center;  /* Zentrierung des Textes */
+    font-size: 22px;  /* Schriftgröße */
+    flex: 1; /* Gleiche Breite */
+    cursor: pointer;
+}
+
+.nav-buttons:first-child {
+    margin-left: 0; /* Kein Abstand auf der linken Seite des ersten Buttons */
+}
+
+.nav-buttons:last-child {
+    margin-right: 0; /* Kein Abstand auf der rechten Seite des letzten Buttons */
+}
+
+.nav-buttons:hover {
+    background-color: #555;
+}
+
+.table-tabs {
+    display: flex;
+    justify-content: space-between; /* Gleichmäßig verteilen */
+}
+
+.tables-tablinks {
+    background-color: #363636;
+    color: white;
+    border: none;
+    height: 40px;
+    flex: 1; /* Gleiche Breite */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* border: 1px solid #ddd;  Rahmen */
+}
+
+.tables-tablinks:first-child {
+    margin-left: 0; /* Kein Abstand auf der linken Seite des ersten Buttons */
+}
+
+.tables-tablinks:last-child {
+    margin-right: 0; /* Kein Abstand auf der rechten Seite des letzten Buttons */
+}
+
+.tables-tablinks:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Unterschiedliche Farben für jeden aktiven Player-Tab-Button */
+#player1tab.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+#player2tab.active {
+    background-color: #25619C;
+    color: white;
+}
+
+#player3tab.active {
+    background-color: #DE6176;
+    color: white;
+}
