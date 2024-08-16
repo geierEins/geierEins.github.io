@@ -1,6 +1,6 @@
 const positions = ["PG", "SG", "SF", "PF", "C"];
 const rounds = [1, 2, 3];
-const playerNumbers = [1, 2, 3];
+const playerNumbers = [1, 2, 3, 4];
 
 let currentPlayer = 1;
 let currentRound = 1;
