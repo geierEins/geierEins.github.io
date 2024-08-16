@@ -19,10 +19,6 @@ body {
     border-radius: 5px;
 }
 
-.spacer{
-    height: 100px;
-}
-
 /* Button Container Styles */
 .button-container {
     display: flex;
@@ -30,6 +26,11 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 5px;
+}
+
+.spacer{
+    margin: 10px;
+    height: 100px;
 }
 
 /* Label Styles */
