@@ -143,12 +143,16 @@ label {
 }
 
 /* Icon Styles */
-.tab-icon {
+.tab-icon, .search-icon {
     height: 30px;
     margin-right: 15px;
 }
 
 /* Active Tab Styles */
+#tabTables.active{
+    background-color: #8B795E;
+}
+
 #tabSpielersuche.active {
     background-color: #4caf50;
 }

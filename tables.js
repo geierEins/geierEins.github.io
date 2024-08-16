@@ -77,24 +77,27 @@ function createTable(player, round) {
     const table = document.createElement("table");
     table.id = tableId;
     table.classList.add("player-table");
-    
+
     const thead = document.createElement("thead");
     const headerRow = document.createElement("tr");
 
     // Create headers with round number
     const headers = [
-        "Position", 
-        `Spieler (Runde ${round})`, 
-        "Team"
+        "Position",
+        `Spieler (Runde ${round})`,
+        "Punkte"
     ];
-    
-    headers.forEach(headerText => {
+
+    headers.forEach((headerText, index) => {
         const th = document.createElement("th");
         th.textContent = headerText;
+        if (index === 2) { // Punkte Spalte
+            th.style.textAlign = "center"; // Zentrieren
+        }
         headerRow.appendChild(th);
     });
     thead.appendChild(headerRow);
-    
+
     const tbody = document.createElement("tbody");
     positions.forEach(position => {
         const row = document.createElement("tr");
@@ -103,18 +106,59 @@ function createTable(player, round) {
         const playerCell = document.createElement("td");
         playerCell.contentEditable = true;
         const pointsCell = document.createElement("td");
-        
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.addEventListener("change", () => updatePoints(player));
+        pointsCell.appendChild(checkbox);
+
         row.appendChild(positionCell);
         row.appendChild(playerCell);
         row.appendChild(pointsCell);
         tbody.appendChild(row);
     });
 
+    // Adding the Voting Points row
+    const votingRow = document.createElement("tr");
+    const emptyCell = document.createElement("td");
+    const votingLabelCell = document.createElement("td");
+    votingLabelCell.textContent = "Voting-Punkte";
+    votingLabelCell.style.textAlign = "right";
+    const votingPointsCell = document.createElement("td");
+    const votingSelect = document.createElement("select");
+    for (let i = 0; i <= 3; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        votingSelect.appendChild(option);
+    }
+    votingSelect.addEventListener("change", () => updatePoints(player));
+    votingPointsCell.appendChild(votingSelect);
+
+    votingRow.appendChild(emptyCell);
+    votingRow.appendChild(votingLabelCell);
+    votingRow.appendChild(votingPointsCell);
+    tbody.appendChild(votingRow);
+
     table.appendChild(thead);
     table.appendChild(tbody);
     document.getElementById("player-tables").appendChild(table);
 }
 
+function updatePoints(player) {
+    const checkboxes = document.querySelectorAll(`#player${player}-round${currentRound} tbody input[type="checkbox"]`);
+    const select = document.querySelector(`#player${player}-round${currentRound} tbody select`);
+    let points = 0;
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            points += 1;
+        }
+    });
+    points += parseInt(select.value, 10);
+
+    const tab = document.getElementById(`player${player}tab`);
+    const tabName = tab.textContent.split('(')[0].trim();
+    tab.textContent = `${tabName} (${points})`;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     initializeTables();
