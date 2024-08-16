@@ -30,12 +30,12 @@
 
 .tables-container td:first-child {
     text-align: center; /* Inhalt der ersten Spalte zentriert */
-    width: 60px; /* Breite der ersten Spalte */
+    width: 30px; /* Breite der ersten Spalte */
 }
 
 .tables-container td:last-child {
     text-align: center; /* Inhalt der letzten Spalte zentriert */
-    width: 80px; /* Breite der letzten Spalte */
+    width: 30px; /* Breite der letzten Spalte */
 }
 
 .tables-container td {
@@ -45,6 +45,7 @@
 .navbuttons-container {
     display: flex;
     justify-content: space-between; /* Gleichmäßig verteilen */
+    align-items: center; /* Zentriert vertikal */
     position: relative; /* Notwendig für die Platzierung der Linie */
 }
 
@@ -81,6 +82,13 @@
 
 .nav-buttons:hover {
     background-color: #555;
+}
+
+#roundLabel {
+    color: white;  /* Textfarbe */
+    font-size: 16px;  /* Schriftgröße */
+    text-align: center; /* Zentrierung */
+    flex: 1; /* Gleiche Breite */
 }
 
 .table-tabs {

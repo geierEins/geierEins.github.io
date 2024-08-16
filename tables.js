@@ -13,6 +13,7 @@ function initializeTables() {
     });
     updateTableVisibility();
     setActiveTab(1); // Setzt den Tab für Player 1 als aktiv
+    updateRoundLabel(); // Aktualisiert die Runde im Label
 }
 
 function setActiveTab(player) {
@@ -42,6 +43,7 @@ function updateTableVisibility() {
             }
         });
     });
+    updateRoundLabel(); // Aktualisiert die Runde im Label
 }
 
 function openPlayer(event, player) {
@@ -83,9 +85,9 @@ function createTable(player, round) {
 
     // Create headers with round number
     const headers = [
-        "Position",
-        `Spieler (Runde ${round})`,
-        "Punkte"
+        "Pos.",
+        `Spielername`,
+        "Pkt."
     ];
 
     headers.forEach((headerText, index) => {
@@ -158,6 +160,15 @@ function updatePoints(player) {
     const tab = document.getElementById(`player${player}tab`);
     const tabName = tab.textContent.split('(')[0].trim();
     tab.textContent = `${tabName} (${points})`;
+}
+
+function updateRoundLabel() {
+    const roundLabel = document.getElementById("roundLabel");
+    if (roundLabel) {
+        roundLabel.textContent = `Runde ${currentRound}`;
+    } else {
+        console.error('Element with ID roundLabel not found');
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
