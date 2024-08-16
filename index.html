@@ -40,9 +40,9 @@
     <!-- Tables Tab -->
     <div id="Tables" class="tabcontent">
         <div class="table-tabs">
-            <button class="tables-tablinks" id="player1tab" onclick="openPlayer(event, 1)">Player 1</button>
-            <button class="tables-tablinks" id="player2tab" onclick="openPlayer(event, 2)">Player 2</button>
-            <button class="tables-tablinks" id="player3tab" onclick="openPlayer(event, 3)">Player 3</button>
+            <button class="tables-tablinks" id="player1tab" ondblclick="editTabName(1)" onclick="openPlayer(event, 1)">Player 1</button>
+            <button class="tables-tablinks" id="player2tab" ondblclick="editTabName(2)" onclick="openPlayer(event, 2)">Player 2</button>
+            <button class="tables-tablinks" id="player3tab" ondblclick="editTabName(3)" onclick="openPlayer(event, 3)">Player 3</button>
         </div>
         <div class="tables-container">
             <div id="player-tables">
@@ -50,8 +50,12 @@
             </div>
         </div>
         <div class="navbuttons-container">
-            <button class="nav-buttons" id="btn-tablesnav-back" onclick="navigateRound(-1)">←</button>
-            <button class="nav-buttons" id="btn-tablesnav-next" onclick="navigateRound(1)">→</button>
+            <button class="nav-buttons" id="btn-tablesnav-back" onclick="navigateRound(-1)">
+                <img src="icon/arrow-left.svg" alt="Arrow Left Icon" class="arrow-icon">
+            </button>
+            <button class="nav-buttons" id="btn-tablesnav-next" onclick="navigateRound(1)">
+                <img src="icon/arrow-right.svg" alt="Arrow Right Icon" class="arrow-icon">
+            </button>
         </div>
     </div>
 

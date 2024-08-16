@@ -56,6 +56,8 @@
     font-size: 22px;  /* Schriftgröße */
     flex: 1; /* Gleiche Breite */
     cursor: pointer;
+    justify-content: center; /* Zentriere horizontal */
+    align-items: center; /* Zentriere vertikal */
 }
 
 .nav-buttons:first-child {
@@ -97,6 +99,10 @@
 .tables-tablinks:hover {
     background-color: #555;
     color: white;
+}
+
+.arrow-icon {
+    height: 30px;
 }
 
 /* Unterschiedliche Farben für jeden aktiven Player-Tab-Button */

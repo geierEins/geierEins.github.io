@@ -85,7 +85,7 @@ function createTable(player, round) {
     const headers = [
         "Position", 
         `Spieler (Runde ${round})`, 
-        "Punkte"
+        "Team"
     ];
     
     headers.forEach(headerText => {
@@ -119,3 +119,37 @@ function createTable(player, round) {
 document.addEventListener("DOMContentLoaded", () => {
     initializeTables();
 });
+
+// Function to edit tab name on double-click
+function editTabName(player) {
+    const tab = document.getElementById(`player${player}tab`);
+    const currentName = tab.textContent;
+
+    // Create an input element to edit the tab name
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentName;
+    input.style.width = '80%';
+
+    // Replace the tab content with the input element
+    tab.textContent = '';
+    tab.appendChild(input);
+    input.focus();
+
+    // Handle input focus out event
+    input.addEventListener('blur', () => {
+        const newName = input.value.trim();
+        if (newName) {
+            tab.textContent = newName;
+        } else {
+            tab.textContent = currentName;
+        }
+    });
+
+    // Handle Enter key event
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            input.blur();
+        }
+    });
+}
