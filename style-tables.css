@@ -124,6 +124,19 @@
     height: 30px;
 }
 
+.reset-link-container {
+    text-align: center;
+    margin-top: 10px; /* Abstand oben */
+}
+
+.reset-link {
+    color: #ff0000; /* Rote Farbe für den Link */
+    text-decoration: underline; /* Unterstrichen */
+    cursor: pointer; /* Hand-Cursor */
+    font-size: 14px;
+    color: white;
+}
+
 /* Unterschiedliche Farben für jeden aktiven Player-Tab-Button */
 #player1tab.active {
     background-color: #4caf50;

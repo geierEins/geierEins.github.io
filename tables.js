@@ -147,19 +147,27 @@ function createTable(player, round) {
 }
 
 function updatePoints(player) {
-    const checkboxes = document.querySelectorAll(`#player${player}-round${currentRound} tbody input[type="checkbox"]`);
-    const select = document.querySelector(`#player${player}-round${currentRound} tbody select`);
-    let points = 0;
-    checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            points += 1;
-        }
-    });
-    points += parseInt(select.value, 10);
+    let totalPoints = 0;
 
+    // Schleife durch alle Runden und addiere die Punkte
+    rounds.forEach(round => {
+        const checkboxes = document.querySelectorAll(`#player${player}-round${round} tbody input[type="checkbox"]`);
+        const select = document.querySelector(`#player${player}-round${round} tbody select`);
+        let roundPoints = 0;
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                roundPoints += 1;
+            }
+        });
+        roundPoints += parseInt(select.value, 10);
+        totalPoints += roundPoints;
+    });
+
+    // Update den Tab mit der Gesamtsumme der Punkte aus allen Runden
     const tab = document.getElementById(`player${player}tab`);
     const tabName = tab.textContent.split('(')[0].trim();
-    tab.textContent = `${tabName} (${points})`;
+    tab.textContent = `${tabName} (${totalPoints})`;
 }
 
 function updateRoundLabel() {
@@ -171,8 +179,39 @@ function updateRoundLabel() {
     }
 }
 
+function resetTeamsAndPoints() {
+    const confirmation = confirm("Wirklich alle Teams und Punkte zurücksetzen?");
+    if (confirmation) {
+        playerNumbers.forEach(player => {
+            rounds.forEach(round => {
+                const table = document.getElementById(`player${player}-round${round}`);
+                if (table) {
+                    const rows = table.querySelectorAll("tbody tr");
+                    rows.forEach((row, index) => {
+                        const cells = row.querySelectorAll("td");
+                        const checkbox = cells[2].querySelector("input[type='checkbox']");
+                        if (checkbox) {
+                            checkbox.checked = false;
+                        }
+                        if (index < positions.length) {
+                            const playerCell = cells[1];
+                            playerCell.textContent = ''; // Setze den Spielernamen zurück
+                        }
+                    });
+                    const votingSelect = table.querySelector("tbody select");
+                    if (votingSelect) {
+                        votingSelect.value = "0";
+                    }
+                }
+            });
+            updatePoints(player); // Ensure the points are updated
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initializeTables();
+    playerNumbers.forEach(player => updatePoints(player)); // Update points for all players on load
 });
 
 // Function to edit tab name on double-click

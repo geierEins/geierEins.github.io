@@ -18,7 +18,7 @@
 
 <div class="tab">
     <button class="tablinks" id="tabTables" onclick="openTab(event, 'Tables')">
-        <img src="icon/tables.svg" alt="Tables Icon" class="tab-icon"> <span class="tab-text">Tables</span>
+        <img src="icon/tables.svg" alt="Tables Icon" class="tab-icon"> <span class="tab-text">Teams</span>
     </button>
     <button class="tablinks" id="tabSpielersuche" onclick="openTab(event, 'Spielersuche')">
         <img src="icon/playersearch.svg" alt="Spielersuche Icon" class="tab-icon"> <span class="tab-text">Spielersuche</span>
@@ -57,6 +57,9 @@
         <button class="nav-buttons" id="btn-tablesnav-next" onclick="navigateRound(1)">
             <img src="icon/arrow-right.svg" alt="Arrow Right Icon" class="arrow-icon">
         </button>
+    </div>
+    <div class="reset-link-container">
+        <a href="#" class="reset-link" onclick="resetTeamsAndPoints()">Teams und Punkte zurücksetzen</a>
     </div>
 </div>
 
@@ -193,7 +196,7 @@
         }
 
         // Set the default tab to open
-        document.getElementById("tabSpielersuche").click();
+        document.getElementById("tabTables").click();
     </script>
 </body>
 </html>
