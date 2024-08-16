@@ -193,7 +193,7 @@ label {
 }
 
 /* Media Queries for Mobile Devices */
-@media (max-width: 549px) {
+@media (max-width: 900px) {
     .tab button .tab-text {
         display: none;
     }
