@@ -26,9 +26,18 @@ function setActiveTab(player) {
     const activeTab = document.getElementById(`player${player}tab`);
     if (activeTab) {
         activeTab.classList.add('active');
+        console.log(`Tab for player ${player} is set to active`); // Debugging-Log
     } else {
         console.error(`Tab with ID player${player}tab not found`);
     }
+    
+    // Entferne alle player-Klassen von roundLabel
+    const roundLabel = document.getElementById("roundLabel");
+    roundLabel.classList.remove('player1', 'player2', 'player3', 'player4');
+    
+    // Füge die entsprechende player-Klasse hinzu
+    roundLabel.classList.add(`player${player}`);
+    console.log(`Added class player${player} to roundLabel`); // Debugging-Log
 }
 
 function updateTableVisibility() {
@@ -59,11 +68,13 @@ function openPlayer(event, player) {
     const activeTab = document.getElementById(`player${player}tab`);
     if (activeTab) {
         activeTab.classList.add('active');
+        console.log(`Tab for player ${player} is clicked and set to active`); // Debugging-Log
     } else {
         console.error(`Tab with ID player${player}tab not found`);
     }
 
     updateTableVisibility();
+    setActiveTab(player); // Stellen Sie sicher, dass diese Funktion hier aufgerufen wird
 }
 
 function navigateRound(direction) {
@@ -101,10 +112,11 @@ function createTable(player, round) {
     thead.appendChild(headerRow);
 
     const tbody = document.createElement("tbody");
-    positions.forEach(position => {
+    positions.forEach((position, index) => {
         const row = document.createElement("tr");
         const positionCell = document.createElement("td");
         positionCell.textContent = position;
+        positionCell.classList.add(`pos-${position.toLowerCase()}`); // Klasse hinzufügen
         const playerCell = document.createElement("td");
         playerCell.contentEditable = true;
         const pointsCell = document.createElement("td");
@@ -145,6 +157,7 @@ function createTable(player, round) {
     table.appendChild(tbody);
     document.getElementById("player-tables").appendChild(table);
 }
+
 
 function updatePoints(player) {
     let totalPoints = 0;

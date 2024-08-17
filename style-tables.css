@@ -68,6 +68,7 @@
     font-size: 22px;  /* Schriftgröße */
     flex: 1; /* Gleiche Breite */
     cursor: pointer;
+    display: flex; /* Flexbox-Layout */
     justify-content: center; /* Zentriere horizontal */
     align-items: center; /* Zentriere vertikal */
 }
@@ -85,10 +86,15 @@
 }
 
 #roundLabel {
-    color: white;  /* Textfarbe */
-    font-size: 16px;  /* Schriftgröße */
-    text-align: center; /* Zentrierung */
+    color: white;
+    font-size: 18px;  /* Schriftgröße */
+    height: 40px;
+    text-align: center; /* Horizontale Zentrierung des Textes */
+    display: flex;  /* Flexbox-Layout */
+    justify-content: center;  /* Horizontale Zentrierung */
+    align-items: center;  /* Vertikale Zentrierung */
     flex: 1; /* Gleiche Breite */
+    font-weight: bold;
 }
 
 .table-tabs {
@@ -121,7 +127,9 @@
 }
 
 .arrow-icon {
-    height: 30px;
+    height: 30px; /* Die Höhe des Pfeils kann angepasst werden */
+    width: 30px; /* Die Breite des Pfeils kann angepasst werden */
+    margin: 0; /* Entfernt jeglichen zusätzlichen Abstand */
 }
 
 .reset-link-container {
@@ -156,4 +164,52 @@
 #player4tab.active {
     background-color: #7A378B;
     color: white;
+}
+
+/* Spezifische Klassen für die Positionen */
+.pos-pg {
+    background-color: #CD0000;
+    font-weight: bold;
+    color: white;
+}
+
+.pos-sg {
+    background-color: #536B6B;
+    font-weight: bold;
+    color: white;
+}
+
+.pos-sf {
+    background-color: #CA9E71;
+    font-weight: bold;
+    color: white;
+}
+
+.pos-pf {
+    background-color: #765331;
+    font-weight: bold;
+    color: white;
+}
+
+.pos-c {
+    background-color: #371E04;
+    font-weight: bold;
+    color: white;
+}
+
+/* Farben für roundLabel je nach aktivem Spieler */
+#roundLabel.player1 {
+    background-color: #4caf50;
+}
+
+#roundLabel.player2 {
+    background-color: #25619C;
+}
+
+#roundLabel.player3 {
+    background-color: #DE6176;
+}
+
+#roundLabel.player4 {
+    background-color: #7A378B;
 }
