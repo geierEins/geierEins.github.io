@@ -47,6 +47,7 @@
     justify-content: space-between; /* Gleichmäßig verteilen */
     align-items: center; /* Zentriert vertikal */
     position: relative; /* Notwendig für die Platzierung der Linie */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .navbuttons-container::after {
@@ -110,7 +111,6 @@
     flex: 1; /* Gleiche Breite */
     cursor: pointer;
     transition: background-color 0.3s;
-    /* border: 1px solid #ddd;  Rahmen */
 }
 
 .tables-tablinks:first-child {
