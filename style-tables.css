@@ -3,7 +3,7 @@
 #roundHeading {
     margin: 0; /* Kein Abstand oben und unten */
     text-align: center;  /* Zentrierung des Textes */
-    font-size: 20px;  /* Schriftgröße */
+    font-size: 18px;  /* Schriftgröße */
     color: white;  /* Textfarbe */
 }
 
