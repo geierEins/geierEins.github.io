@@ -3,7 +3,7 @@
 #roundHeading {
     margin: 0; /* Kein Abstand oben und unten */
     text-align: center;  /* Zentrierung des Textes */
-    font-size: 18px;  /* Schriftgröße */
+    font-size: 20px;  /* Schriftgröße */
     color: white;  /* Textfarbe */
 }
 
@@ -192,7 +192,7 @@
 }
 
 .pos-c {
-    background-color: #371E04;
+    background-color: #442d14;
     font-weight: bold;
     color: white;
 }
