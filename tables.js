@@ -11,33 +11,24 @@ function initializeTables() {
             createTable(player, round);
         });
     });
+    loadLastViewedRounds(); // Lade die zuletzt angesehenen Runden
     updateTableVisibility();
     setActiveTab(1); // Setzt den Tab für Player 1 als aktiv
     updateRoundLabel(); // Aktualisiert die Runde im Label
+    loadFromLocalStorage(); // Lädt gespeicherte Daten
 }
 
 function setActiveTab(player) {
-    // Entfernt die "active" Klasse von allen Tabs
     document.querySelectorAll('.tables-tablinks').forEach(tab => {
         tab.classList.remove('active');
     });
-    
-    // Setzt den Tab für den angegebenen Spieler als aktiv
     const activeTab = document.getElementById(`player${player}tab`);
     if (activeTab) {
         activeTab.classList.add('active');
-        console.log(`Tab for player ${player} is set to active`); // Debugging-Log
-    } else {
-        console.error(`Tab with ID player${player}tab not found`);
     }
-    
-    // Entferne alle player-Klassen von roundLabel
     const roundLabel = document.getElementById("roundLabel");
     roundLabel.classList.remove('player1', 'player2', 'player3', 'player4');
-    
-    // Füge die entsprechende player-Klasse hinzu
     roundLabel.classList.add(`player${player}`);
-    console.log(`Added class player${player} to roundLabel`); // Debugging-Log
 }
 
 function updateTableVisibility() {
@@ -47,40 +38,31 @@ function updateTableVisibility() {
             const table = document.getElementById(currentTableId);
             if (table) {
                 table.style.display = (player === currentPlayer && round === currentRound) ? 'table' : 'none';
-            } else {
-                console.error(`Table with ID ${currentTableId} not found`);
             }
         });
     });
-    updateRoundLabel(); // Aktualisiert die Runde im Label
+    updateRoundLabel();
 }
 
 function openPlayer(event, player) {
     currentPlayer = player;
-    currentRound = 1;  // Reset to round 1 whenever a new player is selected
-
-    // Remove active class from all tabs
+    currentRound = loadLastRound(player);  // Lade die zuletzt gesehene Runde für den Spieler
     document.querySelectorAll('.tables-tablinks').forEach(tab => {
         tab.classList.remove('active');
     });
-
-    // Add active class to the clicked tab
     const activeTab = document.getElementById(`player${player}tab`);
     if (activeTab) {
         activeTab.classList.add('active');
-        console.log(`Tab for player ${player} is clicked and set to active`); // Debugging-Log
-    } else {
-        console.error(`Tab with ID player${player}tab not found`);
     }
-
     updateTableVisibility();
-    setActiveTab(player); // Stellen Sie sicher, dass diese Funktion hier aufgerufen wird
+    setActiveTab(player);
 }
 
 function navigateRound(direction) {
     const newRound = currentRound + direction;
     if (newRound >= 1 && newRound <= 3) {
         currentRound = newRound;
+        saveLastRound(currentPlayer, currentRound);  // Speichere die neue aktuelle Runde
         updateTableVisibility();
     }
 }
@@ -94,49 +76,44 @@ function createTable(player, round) {
     const thead = document.createElement("thead");
     const headerRow = document.createElement("tr");
 
-    // Create headers with round number
-    const headers = [
-        "Pos.",
-        `Spielername`,
-        "Pkt."
-    ];
-
+    const headers = ["Pos.", `Spielername`, "Pkt."];
     headers.forEach((headerText, index) => {
         const th = document.createElement("th");
         th.textContent = headerText;
-        if (index === 2) { // Punkte Spalte
-            th.style.textAlign = "center"; // Zentrieren
-        }
         headerRow.appendChild(th);
     });
     thead.appendChild(headerRow);
 
     const tbody = document.createElement("tbody");
-    positions.forEach((position, index) => {
+    positions.forEach(position => {
         const row = document.createElement("tr");
+
         const positionCell = document.createElement("td");
         positionCell.textContent = position;
-        positionCell.classList.add(`pos-${position.toLowerCase()}`); // Klasse hinzufügen
+        row.appendChild(positionCell);
+
         const playerCell = document.createElement("td");
         playerCell.contentEditable = true;
+        playerCell.addEventListener("input", () => saveToLocalStorage());
+        row.appendChild(playerCell);
+
         const pointsCell = document.createElement("td");
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.addEventListener("change", () => updatePoints(player));
+        checkbox.addEventListener("change", () => {
+            updatePoints(player);
+            saveToLocalStorage();
+        });
         pointsCell.appendChild(checkbox);
-
-        row.appendChild(positionCell);
-        row.appendChild(playerCell);
         row.appendChild(pointsCell);
+
         tbody.appendChild(row);
     });
 
-    // Adding the Voting Points row
     const votingRow = document.createElement("tr");
     const emptyCell = document.createElement("td");
     const votingLabelCell = document.createElement("td");
     votingLabelCell.textContent = "Voting-Punkte";
-    votingLabelCell.style.textAlign = "right";
     const votingPointsCell = document.createElement("td");
     const votingSelect = document.createElement("select");
     for (let i = 0; i <= 3; i++) {
@@ -145,9 +122,11 @@ function createTable(player, round) {
         option.textContent = i;
         votingSelect.appendChild(option);
     }
-    votingSelect.addEventListener("change", () => updatePoints(player));
+    votingSelect.addEventListener("change", () => {
+        updatePoints(player);
+        saveToLocalStorage();
+    });
     votingPointsCell.appendChild(votingSelect);
-
     votingRow.appendChild(emptyCell);
     votingRow.appendChild(votingLabelCell);
     votingRow.appendChild(votingPointsCell);
@@ -158,16 +137,12 @@ function createTable(player, round) {
     document.getElementById("player-tables").appendChild(table);
 }
 
-
 function updatePoints(player) {
     let totalPoints = 0;
-
-    // Schleife durch alle Runden und addiere die Punkte
     rounds.forEach(round => {
         const checkboxes = document.querySelectorAll(`#player${player}-round${round} tbody input[type="checkbox"]`);
         const select = document.querySelector(`#player${player}-round${round} tbody select`);
         let roundPoints = 0;
-
         checkboxes.forEach(checkbox => {
             if (checkbox.checked) {
                 roundPoints += 1;
@@ -177,7 +152,6 @@ function updatePoints(player) {
         totalPoints += roundPoints;
     });
 
-    // Update den Tab mit der Gesamtsumme der Punkte aus allen Runden
     const tab = document.getElementById(`player${player}tab`);
     const tabName = tab.textContent.split('(')[0].trim();
     tab.textContent = `${tabName} (${totalPoints})`;
@@ -187,76 +161,113 @@ function updateRoundLabel() {
     const roundLabel = document.getElementById("roundLabel");
     if (roundLabel) {
         roundLabel.textContent = `Runde ${currentRound}`;
-    } else {
-        console.error('Element with ID roundLabel not found');
     }
 }
 
 function resetTeamsAndPoints() {
     const confirmation = confirm("Wirklich alle Teams und Punkte zurücksetzen?");
     if (confirmation) {
-        playerNumbers.forEach(player => {
-            rounds.forEach(round => {
-                const table = document.getElementById(`player${player}-round${round}`);
-                if (table) {
-                    const rows = table.querySelectorAll("tbody tr");
-                    rows.forEach((row, index) => {
-                        const cells = row.querySelectorAll("td");
-                        const checkbox = cells[2].querySelector("input[type='checkbox']");
-                        if (checkbox) {
-                            checkbox.checked = false;
-                        }
-                        if (index < positions.length) {
-                            const playerCell = cells[1];
-                            playerCell.textContent = ''; // Setze den Spielernamen zurück
-                        }
+        localStorage.clear(); // Löscht die gespeicherten Daten
+        location.reload(); // Seite neu laden, um den Effekt zu sehen
+    }
+}
+
+// Speichert alle Daten in den localStorage
+function saveToLocalStorage() {
+    const data = {};
+
+    playerNumbers.forEach(player => {
+        data[player] = {};
+        rounds.forEach(round => {
+            const tableId = `player${player}-round${round}`;
+            const table = document.getElementById(tableId);
+            const rows = table.querySelectorAll("tbody tr");
+
+            data[player][round] = {
+                players: [],
+                voting: 0 // Hinzufügen eines voting-Wertes
+            };
+
+            rows.forEach((row, index) => {
+                const cells = row.querySelectorAll("td");
+
+                // Speichern der Spieler und Checkbox-Daten
+                if (index < positions.length) {
+                    const playerName = cells[1].textContent.trim(); // Spielername
+                    const checkbox = cells[2].querySelector("input[type='checkbox']"); // Checkbox
+                    data[player][round].players.push({
+                        name: playerName,
+                        checked: checkbox.checked
                     });
-                    const votingSelect = table.querySelector("tbody select");
-                    if (votingSelect) {
-                        votingSelect.value = "0";
-                    }
+                } else {
+                    // Speichern der Voting-Daten
+                    const votingSelect = cells[2].querySelector("select").value;
+                    data[player][round].voting = votingSelect;
                 }
             });
-            updatePoints(player); // Ensure the points are updated
+        });
+    });
+
+    localStorage.setItem("nbaGameData", JSON.stringify(data)); // Speichern im localStorage
+}
+
+// Lädt die Daten aus dem localStorage und füllt die Tabellen
+function loadFromLocalStorage() {
+    const savedData = localStorage.getItem("nbaGameData");
+
+    if (savedData) {
+        const data = JSON.parse(savedData);
+
+        playerNumbers.forEach(player => {
+            rounds.forEach(round => {
+                const tableId = `player${player}-round${round}`;
+                const table = document.getElementById(tableId);
+                const rows = table.querySelectorAll("tbody tr");
+
+                if (data[player] && data[player][round]) {
+                    // Lade die gespeicherten Spielernamen und Checkbox-Daten
+                    data[player][round].players.forEach((playerData, index) => {
+                        if (index < positions.length) {
+                            const cells = rows[index].querySelectorAll("td");
+                            cells[1].textContent = playerData.name; // Spielername aktualisieren
+                            const checkbox = cells[2].querySelector("input[type='checkbox']");
+                            checkbox.checked = playerData.checked; // Checkbox-Zustand aktualisieren
+                        }
+                    });
+
+                    // Lade die Voting-Daten
+                    const votingRow = rows[positions.length]; // Voting-Reihe ist die letzte
+                    const votingSelect = votingRow.querySelector("select");
+                    votingSelect.value = data[player][round].voting;
+                }
+            });
+            updatePoints(player); // Punkte für jeden Spieler nach dem Laden der Daten aktualisieren
         });
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    initializeTables();
-    playerNumbers.forEach(player => updatePoints(player)); // Update points for all players on load
-});
+// Speichere die zuletzt gesehene Runde für einen Spieler
+function saveLastRound(player, round) {
+    localStorage.setItem(`lastRound_player${player}`, round);
+}
 
-// Function to edit tab name on double-click
-function editTabName(player) {
-    const tab = document.getElementById(`player${player}tab`);
-    const currentName = tab.textContent;
+// Lade die zuletzt gesehene Runde für einen Spieler
+function loadLastRound(player) {
+    return parseInt(localStorage.getItem(`lastRound_player${player}`)) || 1; // Standardmäßig Runde 1
+}
 
-    // Create an input element to edit the tab name
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = currentName;
-    input.style.width = '80%';
-
-    // Replace the tab content with the input element
-    tab.textContent = '';
-    tab.appendChild(input);
-    input.focus();
-
-    // Handle input focus out event
-    input.addEventListener('blur', () => {
-        const newName = input.value.trim();
-        if (newName) {
-            tab.textContent = newName;
-        } else {
-            tab.textContent = currentName;
-        }
-    });
-
-    // Handle Enter key event
-    input.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            input.blur();
+// Lade die zuletzt angesehenen Runden für alle Spieler bei Initialisierung
+function loadLastViewedRounds() {
+    playerNumbers.forEach(player => {
+        const lastRound = loadLastRound(player);
+        if (player === currentPlayer) {
+            currentRound = lastRound;
         }
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeTables();
+    playerNumbers.forEach(player => updatePoints(player)); // Punkte für alle Spieler bei Laden der Seite aktualisieren
+});
